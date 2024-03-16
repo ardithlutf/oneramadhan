@@ -32,7 +32,7 @@ class _UserApiClient implements UserApiClient {
     )
             .compose(
               _dio.options,
-              '/breeds/image/random',
+              '/role',
               queryParameters: queryParameters,
               data: _data,
             )

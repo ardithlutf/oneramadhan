@@ -9,7 +9,7 @@ class BlocModule {
     final injector = Injector.instance;
 
     injector.registerSingleton<ApplicationBloc>(
-        ApplicationBloc(localStorageService: injector()));
+        ApplicationBloc(localStorageService: injector(), repo: injector()));
 
     // TODO: Register bloc here
     // injector.registerFactory<UserBloc>(
