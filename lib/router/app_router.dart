@@ -8,13 +8,22 @@ class AppRouter {
   AppRouter._();
 
   static const String home = '/';
+  static const String login = '/login';
 
   static GoRouter get router => _router;
   static final _router = GoRouter(
     routes: <GoRoute>[
       GoRoute(
         path: '/',
-        builder: (context, state) => const MyHomePage(title: 'One Ramadhan',),
+        builder: (context, state) => const MyHomePage(
+          title: 'One Ramadhan',
+        ),
+      ),
+      GoRoute(
+        path: login,
+        builder: (context, state) => const MyHomePage(
+          title: 'One Ramadhan',
+        ),
       ),
     ],
   );

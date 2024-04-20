@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:logger/logger.dart';
 import 'package:oneramadhan/configs/app_config.dart';
 import 'package:oneramadhan/features/application/home_page.dart';
@@ -10,7 +11,8 @@ import 'package:oneramadhan/services/crashlytics_service/crashlytics_service.dar
 
 void main() async {
   await runZonedGuarded(() async {
-    WidgetsFlutterBinding.ensureInitialized();
+    FlutterNativeSplash.preserve(
+        widgetsBinding: WidgetsFlutterBinding.ensureInitialized());
 
     /// Firebase initialize ...
     Logger.level = Level.verbose;
@@ -20,6 +22,7 @@ void main() async {
     await Injector.instance.allReady();
 
     runApp(const MyApp());
+    FlutterNativeSplash.remove();
   }, (error, stack) {
     final CrashlyticsService crashlyticsService =
     Injector.instance<CrashlyticsService>();

@@ -42,6 +42,8 @@ dependencies:
   local_database:
     path: packages/local_database
   flutter_bloc: ^8.1.4
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.1
   bloc_concurrency: ^0.2.4
   get_it: ^7.6.7
   freezed_annotation: ^2.4.1
@@ -64,7 +66,25 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  #to make native splash screen
+  # 1) change path image_path
+  # 2) run commened -> dart run flutter_native_splash:create
+flutter_native_splash:
+  color: "#001442"
+  image: assets/images/logo.png
+  android_12:
+    image: assets/images/logo_v12.png
+    color: "#001442"
 
+
+# to change icon
+# 1) change path image_path
+# 2) run commened -> dart run flutter_launcher_icons:main
+flutter_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/logo_icon.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 flutter_gen:
