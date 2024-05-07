@@ -24,8 +24,10 @@ void main() async {
     runApp(const MyApp());
     FlutterNativeSplash.remove();
   }, (error, stack) {
-    final CrashlyticsService crashlyticsService =
-    Injector.instance<CrashlyticsService>();
-    crashlyticsService.recordException(error, stack);
+    print('FAILED: $error');
+    print('FAILED: $stack');
+    // final CrashlyticsService crashlyticsService =
+    // Injector.instance<CrashlyticsService>();
+    // crashlyticsService.recordException(error, stack);
   });
 }
