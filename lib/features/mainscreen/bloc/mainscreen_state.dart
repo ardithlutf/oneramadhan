@@ -1,6 +1,17 @@
 part of 'mainscreen_bloc.dart';
 
-@freezed
+@Freezed()
 class MainscreenState with _$MainscreenState {
-  const factory MainscreenState.initial() = _Initial;
+  const factory MainscreenState({
+    @Default(UIStatus.loading) UIStatus status,
+    @Default('en') String locale,
+    @Default(false) bool isDarkMode,
+  }) = _Initial;
+}
+
+enum UIStatus {
+  initial,
+  loading,
+  loadSuccess,
+  loadFailed,
 }

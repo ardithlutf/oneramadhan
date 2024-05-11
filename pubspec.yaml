@@ -41,7 +41,7 @@ dependencies:
     path: packages/rest_api
   local_database:
     path: packages/local_database
-  flutter_bloc: ^8.1.4
+  flutter_bloc: ^8.1.5
   flutter_launcher_icons: ^0.13.1
   flutter_native_splash: ^2.3.1
   bloc_concurrency: ^0.2.4
@@ -66,6 +66,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  freezed: ^2.4.7
+  build_runner: ^2.4.8
   #to make native splash screen
   # 1) change path image_path
   # 2) run commened -> dart run flutter_native_splash:create

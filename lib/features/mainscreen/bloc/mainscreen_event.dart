@@ -1,6 +1,6 @@
 part of 'mainscreen_bloc.dart';
 
-@freezed
+@Freezed()
 class MainscreenEvent with _$MainscreenEvent {
-  const factory MainscreenEvent.started() = _Started;
+  const factory MainscreenEvent.started() = Started;
 }
