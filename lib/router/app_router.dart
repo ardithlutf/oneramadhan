@@ -21,7 +21,7 @@ class AppRouter {
     routes: <GoRoute>[
       GoRoute(
         path: home,
-        builder: (context, state) => const LoginPage(),
+        builder: (context, state) => const OnBoardingPage(),
       ),
       GoRoute(
         path: login,

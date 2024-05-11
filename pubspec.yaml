@@ -101,7 +101,6 @@ flutter_intl:
 flutter:
   assets:
     - assets/fonts/
-    - assets/icons/
     - assets/images/
   uses-material-design: true
   fonts:
