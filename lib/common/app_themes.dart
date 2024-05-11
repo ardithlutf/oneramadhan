@@ -19,43 +19,159 @@ class AppThemes {
   static const Color _lightIconColor = Color(0xff000000);
   static const Color _darkIconColor = Color(0xffffffff);
 
+  // Backgorund Button
+  static const Color _lightBackgroundButtonColor = Color(0xFF001442);
+  static const Color _darkBackgroundButtonColor = Color(0xFF1a222d);
+
   //Text themes
   static const TextTheme _lightTextTheme = TextTheme(
-    headline1: TextStyle(fontSize: 96.0, color: _lightTextColor),
-    headline2: TextStyle(fontSize: 60.0, color: _lightTextColor),
-    headline3: TextStyle(fontSize: 48.0, color: _lightTextColor),
-    headline4: TextStyle(fontSize: 34.0, color: _lightTextColor),
-    headline5: TextStyle(fontSize: 24.0, color: _lightTextColor),
-    headline6: TextStyle(
-        fontSize: 20.0, color: _lightTextColor, fontWeight: FontWeight.w500),
-    subtitle1: TextStyle(fontSize: 16.0, color: _lightTextColor),
-    subtitle2: TextStyle(
-        fontSize: 14.0, color: _lightTextColor, fontWeight: FontWeight.w500),
-    bodyText1: TextStyle(fontSize: 16.0, color: _lightTextColor),
-    bodyText2: TextStyle(fontSize: 14.0, color: _lightTextColor),
-    button: TextStyle(
-        fontSize: 14.0, color: _lightTextColor, fontWeight: FontWeight.w500),
-    caption: TextStyle(fontSize: 12.0, color: _lightTextColor),
-    overline: TextStyle(fontSize: 14.0, color: _lightTextColor),
+    displayLarge: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 96.0,
+      fontWeight: FontWeight.w700,
+      color: _lightTextColor,
+    ),
+    displayMedium: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 60.0,
+      fontWeight: FontWeight.w500,
+      color: _lightTextColor,
+    ),
+    headlineLarge: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 48.0,
+      fontWeight: FontWeight.w700,
+      color: _lightTextColor,
+    ),
+    headlineMedium: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 34.0,
+      fontWeight: FontWeight.w700,
+      color: _lightTextColor,
+    ),
+    titleLarge: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 24.0,
+      fontWeight: FontWeight.w700,
+      color: _lightTextColor,
+    ),
+    titleMedium: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 20.0,
+      fontWeight: FontWeight.w500,
+      color: _lightTextColor,
+    ),
+    bodyLarge: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 16.0,
+      fontWeight: FontWeight.w700,
+      color: _lightTextColor,
+    ),
+    bodyMedium: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 16.0,
+      fontWeight: FontWeight.w500,
+      color: _lightTextColor,
+    ),
+    bodySmall: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 14.0,
+      fontWeight: FontWeight.w500,
+      color: _lightTextColor,
+    ),
+    labelLarge: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 14.0,
+      fontWeight: FontWeight.w500,
+      color: _lightTextColor,
+    ),
+    labelMedium: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 12.0,
+      fontWeight: FontWeight.w500,
+      color: _lightTextColor,
+    ),
+    labelSmall: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 14.0,
+      fontWeight: FontWeight.w500,
+      color: _lightTextColor,
+    ),
   );
 
   static const TextTheme _darkTextTheme = TextTheme(
-    headline1: TextStyle(fontSize: 96.0, color: _darkTextColor),
-    headline2: TextStyle(fontSize: 60.0, color: _darkTextColor),
-    headline3: TextStyle(fontSize: 48.0, color: _darkTextColor),
-    headline4: TextStyle(fontSize: 34.0, color: _darkTextColor),
-    headline5: TextStyle(fontSize: 24.0, color: _darkTextColor),
-    headline6: TextStyle(
-        fontSize: 20.0, color: _darkTextColor, fontWeight: FontWeight.w500),
-    subtitle1: TextStyle(fontSize: 16.0, color: _darkTextColor),
-    subtitle2: TextStyle(
-        fontSize: 14.0, color: _darkTextColor, fontWeight: FontWeight.w500),
-    bodyText1: TextStyle(fontSize: 16.0, color: _darkTextColor),
-    bodyText2: TextStyle(fontSize: 14.0, color: _darkTextColor),
-    button: TextStyle(
-        fontSize: 14.0, color: _darkTextColor, fontWeight: FontWeight.w500),
-    caption: TextStyle(fontSize: 12.0, color: _darkTextColor),
-    overline: TextStyle(fontSize: 14.0, color: _darkTextColor),
+    displayLarge: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 96.0,
+      fontWeight: FontWeight.w700,
+      color: _darkTextColor,
+    ),
+    displayMedium: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 60.0,
+      fontWeight: FontWeight.w500,
+      color: _darkTextColor,
+    ),
+    headlineLarge: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 48.0,
+      fontWeight: FontWeight.w700,
+      color: _darkTextColor,
+    ),
+    headlineMedium: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 34.0,
+      fontWeight: FontWeight.w700,
+      color: _darkTextColor,
+    ),
+    titleLarge: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 24.0,
+      fontWeight: FontWeight.w700,
+      color: _darkTextColor,
+    ),
+    titleMedium: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 20.0,
+      fontWeight: FontWeight.w500,
+      color: _darkTextColor,
+    ),
+    bodyLarge: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 16.0,
+      fontWeight: FontWeight.w700,
+      color: _darkTextColor,
+    ),
+    bodyMedium: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 16.0,
+      fontWeight: FontWeight.w500,
+      color: _darkTextColor,
+    ),
+    bodySmall: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 14.0,
+      fontWeight: FontWeight.w500,
+      color: _darkTextColor,
+    ),
+    labelLarge: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 14.0,
+      fontWeight: FontWeight.w500,
+      color: _darkTextColor,
+    ),
+    labelMedium: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 12.0,
+      fontWeight: FontWeight.w500,
+      color: _darkTextColor,
+    ),
+    labelSmall: TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 14.0,
+      fontWeight: FontWeight.w500,
+      color: _darkTextColor,
+    ),
   );
 
   ///Light theme
@@ -75,6 +191,36 @@ class AppThemes {
     textTheme: _lightTextTheme,
     dividerTheme: const DividerThemeData(
       color: Colors.grey,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        minimumSize: const Size(48, 48),
+        backgroundColor: _lightBackgroundButtonColor,
+        foregroundColor: Colors.white,
+        disabledBackgroundColor: Colors.grey,
+        disabledForegroundColor: Colors.white,
+        textStyle: const TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 16.0,
+          fontWeight: FontWeight.w500,
+          color: Colors.white,
+        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+      ),
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        minimumSize: const Size(48, 48),
+        backgroundColor: Colors.white,
+        textStyle: const TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 16.0,
+          fontWeight: FontWeight.w500,
+          color:  Color(0xFF001442),
+        ),
+        side: const BorderSide(color: _lightBackgroundButtonColor, width: 1),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+      ),
     ),
   );
 
