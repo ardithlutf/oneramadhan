@@ -22,25 +22,42 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "already_have_account":
+            MessageLookupByLibrary.simpleMessage("Already have an account"),
         "assets": MessageLookupByLibrary.simpleMessage("Assets gen"),
+        "bahasa": MessageLookupByLibrary.simpleMessage("bahasa"),
         "config": MessageLookupByLibrary.simpleMessage("Config"),
+        "create_account":
+            MessageLookupByLibrary.simpleMessage("Create an account"),
         "dark_mode": MessageLookupByLibrary.simpleMessage("Dark mode"),
         "delete_failed": MessageLookupByLibrary.simpleMessage("Delete failed"),
         "delete_success":
             MessageLookupByLibrary.simpleMessage("Delete success"),
         "didnt_supported":
             MessageLookupByLibrary.simpleMessage("Floor didnt support"),
+        "dont_have_account":
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "go_route": MessageLookupByLibrary.simpleMessage("Go route"),
         "image_from_db": MessageLookupByLibrary.simpleMessage("Image from DB"),
         "increment": MessageLookupByLibrary.simpleMessage("Increment"),
+        "intro_onboarding": MessageLookupByLibrary.simpleMessage(
+            "One Application for All\nYour Ramadan Activities"),
         "load_and_insert_db":
             MessageLookupByLibrary.simpleMessage("Load and insert DB"),
         "load_failed": MessageLookupByLibrary.simpleMessage("Load failed"),
         "load_image": MessageLookupByLibrary.simpleMessage("Load image"),
+        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "login_as_guest":
+            MessageLookupByLibrary.simpleMessage("Login as guest"),
+        "or": MessageLookupByLibrary.simpleMessage("or"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
         "press_button": MessageLookupByLibrary.simpleMessage("Press button"),
+        "sign_in_with_google":
+            MessageLookupByLibrary.simpleMessage("Sign in with Google"),
+        "sign_up": MessageLookupByLibrary.simpleMessage("Sign up"),
         "user_image_random":
-            MessageLookupByLibrary.simpleMessage("User image random"),
-        "vietnamese": MessageLookupByLibrary.simpleMessage("Vietnamese")
+            MessageLookupByLibrary.simpleMessage("User image random")
       };
 }

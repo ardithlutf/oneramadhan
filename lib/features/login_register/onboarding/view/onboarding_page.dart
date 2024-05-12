@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../../generated/assets.gen.dart';
+import '../../../../generated/l10n.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({super.key});
@@ -15,12 +17,12 @@ class OnBoardingPage extends StatelessWidget {
               const SizedBox(height: 8),
               Align(
                 alignment: Alignment.centerLeft,
-                child: SvgPicture.asset('assets/images/OneRamadhan1.svg'),
+                child: Assets.images.oneRamadhan1.svg(),
               ),
               const SizedBox(height: 44),
-              Image.asset('assets/images/ilustration1.png'),
+              Assets.images.ilustration1.image(),
               Text(
-                'Satu Aplikasi untuk Semua Aktivitas Ramadhan Anda',
+                S.current.intro_onboarding,
                 style: Theme.of(context).textTheme.titleMedium,
                 textAlign: TextAlign.center,
               ),
@@ -31,7 +33,7 @@ class OnBoardingPage extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {},
                   child: Text(
-                    'Buat akun',
+                    S.current.create_account,
                     style: Theme.of(context)
                         .textTheme
                         .bodyMedium!
@@ -46,7 +48,7 @@ class OnBoardingPage extends StatelessWidget {
                 child: OutlinedButton(
                   onPressed: () {},
                   child: Text(
-                    'Sudah punya akun',
+                    S.current.already_have_account,
                     style: Theme.of(context)
                         .textTheme
                         .bodyMedium!
@@ -61,11 +63,25 @@ class OnBoardingPage extends StatelessWidget {
                 child: TextButton(
                   onPressed: () {},
                   child: Text(
-                    'Masuk sebagai tamu',
+                    S.current.login_as_guest,
                     style: Theme.of(context)
                         .textTheme
                         .bodyMedium!
                         .copyWith(color: const Color(0xFF757682)),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 48,
+                width: double.infinity,
+                child: OutlinedButton(
+                  onPressed: () {},
+                  child: Text(
+                    S.current.already_have_account,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium!
+                        .copyWith(color: const Color(0xFF001442)),
                   ),
                 ),
               ),
