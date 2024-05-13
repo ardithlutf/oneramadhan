@@ -8,6 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rest_api/rest_api.dart';
 
+import '../../../configs/app_config.dart';
+
 part 'application_event.dart';
 part 'application_state.dart';
 part 'application_bloc.freezed.dart';
@@ -39,13 +41,21 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
     final bool isDarkMode = _localStorageService.isDarkMode;
 
     // API CALL
-    final User user = await _repo.getUser();
+    try {
+      final User user = await _repo.getUser();
 
-    emit(state.copyWith(
-      status: UIStatus.loadSuccess,
-      locale: locale,
-      isDarkMode: isDarkMode,
-    ));
+      emit(state.copyWith(
+        status: UIStatus.loadSuccess,
+        locale: locale,
+        isDarkMode: isDarkMode,
+      ));
+    } catch (e) {
+      emit(state.copyWith(
+        status: UIStatus.loadFailed,
+        locale: locale,
+        isDarkMode: isDarkMode,
+      ));
+    }
   }
 
   FutureOr<void> _onLocaleChanged(

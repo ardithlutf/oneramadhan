@@ -4,7 +4,7 @@ part of 'application_bloc.dart';
 class ApplicationState with _$ApplicationState {
   const factory ApplicationState({
     @Default(UIStatus.loading) UIStatus status,
-    @Default('en') String locale,
+    @Default(AppConfig.defaultLocale) String locale,
     @Default(false) bool isDarkMode,
   }) = _ApplicationState;
 }

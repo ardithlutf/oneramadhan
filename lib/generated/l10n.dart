@@ -130,11 +130,11 @@ class S {
     );
   }
 
-  /// `Vietnamese`
-  String get vietnamese {
+  /// `bahasa`
+  String get bahasa {
     return Intl.message(
-      'Vietnamese',
-      name: 'vietnamese',
+      'bahasa',
+      name: 'bahasa',
       desc: '',
       args: [],
     );
@@ -209,6 +209,206 @@ class S {
       args: [],
     );
   }
+
+  /// `One Application for All\nYour Ramadan Activities`
+  String get intro_onboarding {
+    return Intl.message(
+      'One Application for All\nYour Ramadan Activities',
+      name: 'intro_onboarding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create an account`
+  String get create_account {
+    return Intl.message(
+      'Create an account',
+      name: 'create_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account`
+  String get already_have_account {
+    return Intl.message(
+      'Already have an account',
+      name: 'already_have_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get login {
+    return Intl.message(
+      'Login',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login as guest`
+  String get login_as_guest {
+    return Intl.message(
+      'Login as guest',
+      name: 'login_as_guest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirmation Password`
+  String get confirm_password {
+    return Intl.message(
+      'Confirmation Password',
+      name: 'confirm_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `or`
+  String get or {
+    return Intl.message(
+      'or',
+      name: 'or',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in with Google`
+  String get sign_in_with_google {
+    return Intl.message(
+      'Sign in with Google',
+      name: 'sign_in_with_google',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue with Google`
+  String get continue_with_google {
+    return Intl.message(
+      'Continue with Google',
+      name: 'continue_with_google',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?`
+  String get dont_have_account {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'dont_have_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign up`
+  String get sign_up {
+    return Intl.message(
+      'Sign up',
+      name: 'sign_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome`
+  String get welcome {
+    return Intl.message(
+      'Welcome',
+      name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full Name`
+  String get full_name {
+    return Intl.message(
+      'Full Name',
+      name: 'full_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date of Birth`
+  String get date_birth {
+    return Intl.message(
+      'Date of Birth',
+      name: 'date_birth',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continue_register {
+    return Intl.message(
+      'Continue',
+      name: 'continue_register',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gender`
+  String get gender {
+    return Intl.message(
+      'Gender',
+      name: 'gender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Man`
+  String get man {
+    return Intl.message(
+      'Man',
+      name: 'man',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Women`
+  String get women {
+    return Intl.message(
+      'Women',
+      name: 'women',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -217,7 +417,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'vi'),
+      Locale.fromSubtags(languageCode: 'id'),
     ];
   }
 

@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a id locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,57 +18,54 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'id';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "already_have_account":
-            MessageLookupByLibrary.simpleMessage("Already have an account"),
+            MessageLookupByLibrary.simpleMessage("Sudah punya akun"),
         "assets": MessageLookupByLibrary.simpleMessage("Assets gen"),
-        "bahasa": MessageLookupByLibrary.simpleMessage("bahasa"),
+        "bahasa": MessageLookupByLibrary.simpleMessage("Bahasa Indonesia"),
         "config": MessageLookupByLibrary.simpleMessage("Config"),
         "confirm_password":
-            MessageLookupByLibrary.simpleMessage("Confirmation Password"),
-        "continue_register": MessageLookupByLibrary.simpleMessage("Continue"),
+            MessageLookupByLibrary.simpleMessage("Konfirmasi Password"),
+        "continue_register": MessageLookupByLibrary.simpleMessage("Lanjutkan"),
         "continue_with_google":
-            MessageLookupByLibrary.simpleMessage("Continue with Google"),
-        "create_account":
-            MessageLookupByLibrary.simpleMessage("Create an account"),
+            MessageLookupByLibrary.simpleMessage("Lanjutkan dengan Google"),
+        "create_account": MessageLookupByLibrary.simpleMessage("Buat akun"),
         "dark_mode": MessageLookupByLibrary.simpleMessage("Dark mode"),
-        "date_birth": MessageLookupByLibrary.simpleMessage("Date of Birth"),
+        "date_birth": MessageLookupByLibrary.simpleMessage("Tanggal Lahir"),
         "delete_failed": MessageLookupByLibrary.simpleMessage("Delete failed"),
         "delete_success":
             MessageLookupByLibrary.simpleMessage("Delete success"),
-        "didnt_supported":
-            MessageLookupByLibrary.simpleMessage("Floor didnt support"),
         "dont_have_account":
-            MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+            MessageLookupByLibrary.simpleMessage("Belum punya akun?"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
-        "full_name": MessageLookupByLibrary.simpleMessage("Full Name"),
-        "gender": MessageLookupByLibrary.simpleMessage("Gender"),
+        "full_name": MessageLookupByLibrary.simpleMessage("Nama Lengkap"),
+        "gender": MessageLookupByLibrary.simpleMessage("Jenis Kelamin"),
         "go_route": MessageLookupByLibrary.simpleMessage("Go route"),
         "image_from_db": MessageLookupByLibrary.simpleMessage("Image from DB"),
         "increment": MessageLookupByLibrary.simpleMessage("Increment"),
         "intro_onboarding": MessageLookupByLibrary.simpleMessage(
-            "One Application for All\nYour Ramadan Activities"),
+            "Satu Aplikasi untuk Semua\nAktivitas Ramadhan Anda"),
         "load_and_insert_db":
             MessageLookupByLibrary.simpleMessage("Load and insert DB"),
         "load_failed": MessageLookupByLibrary.simpleMessage("Load failed"),
         "load_image": MessageLookupByLibrary.simpleMessage("Load image"),
-        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "login": MessageLookupByLibrary.simpleMessage("Masuk"),
         "login_as_guest":
-            MessageLookupByLibrary.simpleMessage("Login as guest"),
-        "man": MessageLookupByLibrary.simpleMessage("Man"),
-        "or": MessageLookupByLibrary.simpleMessage("or"),
+            MessageLookupByLibrary.simpleMessage("Masuk sebagai tamu"),
+        "man": MessageLookupByLibrary.simpleMessage("Laki-laki"),
+        "or": MessageLookupByLibrary.simpleMessage("atau"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "press_button": MessageLookupByLibrary.simpleMessage("Press button"),
         "sign_in_with_google":
-            MessageLookupByLibrary.simpleMessage("Sign in with Google"),
-        "sign_up": MessageLookupByLibrary.simpleMessage("Sign up"),
+            MessageLookupByLibrary.simpleMessage("Masuk dengan Google"),
+        "sign_up": MessageLookupByLibrary.simpleMessage("Daftar"),
         "user_image_random":
             MessageLookupByLibrary.simpleMessage("User image random"),
-        "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
-        "women": MessageLookupByLibrary.simpleMessage("Women")
+        "welcome": MessageLookupByLibrary.simpleMessage("Selamat Datang"),
+        "women": MessageLookupByLibrary.simpleMessage("Perempuan")
       };
 }

@@ -1,3 +1,4 @@
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:oneramadhan/common/app_themes.dart';
 import 'package:oneramadhan/configs/app_config.dart';
 import 'package:oneramadhan/features/application/bloc/application_bloc.dart';
@@ -59,7 +60,10 @@ class _MyAppState extends State<MyApp> {
         child: MaterialApp.router(
           localizationsDelegates: [
             appLocalizationDelegate,
-            DefaultCupertinoLocalizations.delegate
+            DefaultCupertinoLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: appLocalizationDelegate.supportedLocales,
           locale: Locale(_locale),
@@ -69,7 +73,7 @@ class _MyAppState extends State<MyApp> {
           routeInformationProvider: AppRouter.router.routeInformationProvider,
           routeInformationParser: AppRouter.router.routeInformationParser,
           routerDelegate: AppRouter.router.routerDelegate,
-          title: 'BoilerPlate',
+          title: 'One Ramadhan',
           debugShowCheckedModeBanner: false,
         ),
       ),

@@ -55,12 +55,12 @@ class _ConfigPageState extends State<ConfigPage> {
               title: Text(S.current.english),
             ),
             RadioListTile<String>(
-              value: 'vi',
+              value: 'id',
               groupValue: state.locale,
               onChanged: (value) {
-                _bloc.add(const ApplicationLocaleChanged(locale: 'vi'));
+                _bloc.add(const ApplicationLocaleChanged(locale: 'id'));
               },
-              title: Text(S.current.vietnamese),
+              title: Text(S.current.bahasa),
             ),
           ],
         );
