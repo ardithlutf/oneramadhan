@@ -73,7 +73,7 @@ class _MyAppState extends State<MyApp> {
           routeInformationProvider: AppRouter.router.routeInformationProvider,
           routeInformationParser: AppRouter.router.routeInformationParser,
           routerDelegate: AppRouter.router.routerDelegate,
-          title: 'BoilerPlate',
+          title: 'One Ramadhan',
           debugShowCheckedModeBanner: false,
         ),
       ),

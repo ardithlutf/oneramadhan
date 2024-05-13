@@ -4,12 +4,13 @@ import '../../../../generated/assets.gen.dart';
 import '../../../../generated/l10n.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  TextEditingController textCUsername = TextEditingController();
+  TextEditingController textCPassword = TextEditingController();
+
+  LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController textCUsername = TextEditingController();
-    TextEditingController textCPassword = TextEditingController();
     return Scaffold(
       appBar: AppBar(title: Text(S.current.login)),
       body: Padding(

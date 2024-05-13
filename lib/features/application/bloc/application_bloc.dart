@@ -41,13 +41,21 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
     final bool isDarkMode = _localStorageService.isDarkMode;
 
     // API CALL
-    final User user = await _repo.getUser();
+    try {
+      final User user = await _repo.getUser();
 
-    emit(state.copyWith(
-      status: UIStatus.loadSuccess,
-      locale: locale,
-      isDarkMode: isDarkMode,
-    ));
+      emit(state.copyWith(
+        status: UIStatus.loadSuccess,
+        locale: locale,
+        isDarkMode: isDarkMode,
+      ));
+    } catch (e) {
+      emit(state.copyWith(
+        status: UIStatus.loadFailed,
+        locale: locale,
+        isDarkMode: isDarkMode,
+      ));
+    }
   }
 
   FutureOr<void> _onLocaleChanged(
