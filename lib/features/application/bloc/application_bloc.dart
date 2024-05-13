@@ -8,6 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rest_api/rest_api.dart';
 
+import '../../../configs/app_config.dart';
+
 part 'application_event.dart';
 part 'application_state.dart';
 part 'application_bloc.freezed.dart';
