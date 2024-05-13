@@ -10,7 +10,6 @@ class AppRouter {
 
   static const String home = '/';
   static const String login = '/login';
-  static const String onboarding = '/onboarding';
   static const String register = '/register';
   static const String completeRegister = '/complete-register';
 
@@ -24,10 +23,6 @@ class AppRouter {
       GoRoute(
         path: login,
         builder: (context, state) => LoginPage(),
-      ),
-      GoRoute(
-        path: onboarding,
-        builder: (context, state) => const OnBoardingPage(),
       ),
       GoRoute(
         path: register,

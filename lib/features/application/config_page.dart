@@ -31,7 +31,7 @@ class _ConfigPageState extends State<ConfigPage> {
         padding: const EdgeInsets.all(AppDimens.basePadding),
         child: Column(
           children: [
-            _buildLangs(),
+            _buildLanguages(),
             AppSpacing.verticalSpacing24,
             _buildDarkMode(),
           ],
@@ -40,7 +40,7 @@ class _ConfigPageState extends State<ConfigPage> {
     );
   }
 
-  Widget _buildLangs() {
+  Widget _buildLanguages() {
     return BlocBuilder<ApplicationBloc, ApplicationState>(
       bloc: _bloc,
       builder: (context, state) {
