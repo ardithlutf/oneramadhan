@@ -21,8 +21,17 @@
   "login_as_guest": "Masuk sebagai tamu",
   "email": "Email",
   "password": "Password",
-  "or": "or",
+  "confirm_password": "Konfirmasi Password",
+  "or": "atau",
   "sign_in_with_google": "Masuk dengan Google",
+  "continue_with_google": "Lanjutkan dengan Google",
   "dont_have_account" : "Belum punya akun?",
-  "sign_up": "Daftar"
+  "sign_up": "Daftar",
+  "welcome" : "Selamat Datang",
+  "full_name": "Nama Lengkap",
+  "date_birth" : "Tanggal Lahir",
+  "continue_register" : "Lanjutkan",
+  "gender" : "Jenis Kelamin",
+  "man": "Laki-laki",
+  "women": "Perempuan"
 }

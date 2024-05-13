@@ -280,6 +280,16 @@ class S {
     );
   }
 
+  /// `Confirmation Password`
+  String get confirm_password {
+    return Intl.message(
+      'Confirmation Password',
+      name: 'confirm_password',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `or`
   String get or {
     return Intl.message(
@@ -300,6 +310,16 @@ class S {
     );
   }
 
+  /// `Continue with Google`
+  String get continue_with_google {
+    return Intl.message(
+      'Continue with Google',
+      name: 'continue_with_google',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Don't have an account?`
   String get dont_have_account {
     return Intl.message(
@@ -315,6 +335,76 @@ class S {
     return Intl.message(
       'Sign up',
       name: 'sign_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome`
+  String get welcome {
+    return Intl.message(
+      'Welcome',
+      name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full Name`
+  String get full_name {
+    return Intl.message(
+      'Full Name',
+      name: 'full_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date of Birth`
+  String get date_birth {
+    return Intl.message(
+      'Date of Birth',
+      name: 'date_birth',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continue_register {
+    return Intl.message(
+      'Continue',
+      name: 'continue_register',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gender`
+  String get gender {
+    return Intl.message(
+      'Gender',
+      name: 'gender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Man`
+  String get man {
+    return Intl.message(
+      'Man',
+      name: 'man',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Women`
+  String get women {
+    return Intl.message(
+      'Women',
+      name: 'women',
       desc: '',
       args: [],
     );

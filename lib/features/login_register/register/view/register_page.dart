@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../generated/assets.gen.dart';
 import '../../../../generated/l10n.dart';
+import '../../../../router/app_router.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     TextEditingController textCUsername = TextEditingController();
     TextEditingController textCPassword = TextEditingController();
+    TextEditingController textCConfirmPassword = TextEditingController();
     return Scaffold(
-      appBar: AppBar(title: Text(S.current.login)),
+      appBar: AppBar(title: Text(S.current.create_account)),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -39,14 +42,28 @@ class LoginPage extends StatelessWidget {
                     ),
               ),
             ),
+            const SizedBox(height: 16),
+            TextField(
+              controller: textCConfirmPassword,
+              obscureText: true,
+              decoration: InputDecoration(
+                hintText: S.current.confirm_password,
+                hintStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: const Color(0xFF757682),
+                      fontWeight: FontWeight.w400,
+                    ),
+              ),
+            ),
             const SizedBox(height: 32),
             SizedBox(
               height: 48,
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.push(AppRouter.completeRegister);
+                },
                 child: Text(
-                  S.current.login,
+                  S.current.sign_up,
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium!
@@ -93,7 +110,7 @@ class LoginPage extends StatelessWidget {
                     Assets.icons.google.svg(),
                     const SizedBox(width: 8),
                     Text(
-                      S.current.sign_in_with_google,
+                      S.current.continue_with_google,
                       style: Theme.of(context)
                           .textTheme
                           .bodyMedium!
@@ -108,7 +125,7 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  S.current.dont_have_account,
+                  "${S.current.already_have_account}?",
                   style: Theme.of(context)
                       .textTheme
                       .bodySmall
@@ -116,7 +133,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {},
-                  child: Text(S.current.sign_up),
+                  child: Text(S.current.login),
                 ),
               ],
             ),

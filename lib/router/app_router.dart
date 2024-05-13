@@ -1,11 +1,9 @@
-import 'package:oneramadhan/features/application/config_page.dart';
-import 'package:oneramadhan/features/application/home_page.dart';
-import 'package:oneramadhan/widgets/error_page.dart';
-import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
 
+import '../features/login_register/complete_register/view/complete_register_page.dart';
 import '../features/login_register/login/view/login_page.dart';
 import '../features/login_register/onboarding/view/onboarding_page.dart';
+import '../features/login_register/register/view/register_page.dart';
 
 class AppRouter {
   AppRouter._();
@@ -21,7 +19,7 @@ class AppRouter {
     routes: <GoRoute>[
       GoRoute(
         path: home,
-        builder: (context, state) => const LoginPage(),
+        builder: (context, state) => const OnBoardingPage(),
       ),
       GoRoute(
         path: login,
@@ -33,11 +31,11 @@ class AppRouter {
       ),
       GoRoute(
         path: register,
-        builder: (context, state) => const LoginPage(),
+        builder: (context, state) => const RegisterPage(),
       ),
       GoRoute(
         path: completeRegister,
-        builder: (context, state) => const LoginPage(),
+        builder: (context, state) => const CompleteRegisterPage(),
       ),
     ],
   );
