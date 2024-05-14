@@ -40,23 +40,23 @@ mixin _$ApplicationEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ApplicationLoaded value) loaded,
-    required TResult Function(ApplicationLocaleChanged value) localeChanged,
-    required TResult Function(ApplicationDarkModeChanged value) darkModeChanged,
+    required TResult Function(_ApplicationLoadedEvent value) loaded,
+    required TResult Function(_LocaleChangedEvent value) localeChanged,
+    required TResult Function(_DarkModeChangedEvent value) darkModeChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ApplicationLoaded value)? loaded,
-    TResult? Function(ApplicationLocaleChanged value)? localeChanged,
-    TResult? Function(ApplicationDarkModeChanged value)? darkModeChanged,
+    TResult? Function(_ApplicationLoadedEvent value)? loaded,
+    TResult? Function(_LocaleChangedEvent value)? localeChanged,
+    TResult? Function(_DarkModeChangedEvent value)? darkModeChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ApplicationLoaded value)? loaded,
-    TResult Function(ApplicationLocaleChanged value)? localeChanged,
-    TResult Function(ApplicationDarkModeChanged value)? darkModeChanged,
+    TResult Function(_ApplicationLoadedEvent value)? loaded,
+    TResult Function(_LocaleChangedEvent value)? localeChanged,
+    TResult Function(_DarkModeChangedEvent value)? darkModeChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -81,25 +81,27 @@ class _$ApplicationEventCopyWithImpl<$Res, $Val extends ApplicationEvent>
 }
 
 /// @nodoc
-abstract class _$$ApplicationLoadedImplCopyWith<$Res> {
-  factory _$$ApplicationLoadedImplCopyWith(_$ApplicationLoadedImpl value,
-          $Res Function(_$ApplicationLoadedImpl) then) =
-      __$$ApplicationLoadedImplCopyWithImpl<$Res>;
+abstract class _$$ApplicationLoadedEventImplCopyWith<$Res> {
+  factory _$$ApplicationLoadedEventImplCopyWith(
+          _$ApplicationLoadedEventImpl value,
+          $Res Function(_$ApplicationLoadedEventImpl) then) =
+      __$$ApplicationLoadedEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ApplicationLoadedImplCopyWithImpl<$Res>
-    extends _$ApplicationEventCopyWithImpl<$Res, _$ApplicationLoadedImpl>
-    implements _$$ApplicationLoadedImplCopyWith<$Res> {
-  __$$ApplicationLoadedImplCopyWithImpl(_$ApplicationLoadedImpl _value,
-      $Res Function(_$ApplicationLoadedImpl) _then)
+class __$$ApplicationLoadedEventImplCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res, _$ApplicationLoadedEventImpl>
+    implements _$$ApplicationLoadedEventImplCopyWith<$Res> {
+  __$$ApplicationLoadedEventImplCopyWithImpl(
+      _$ApplicationLoadedEventImpl _value,
+      $Res Function(_$ApplicationLoadedEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ApplicationLoadedImpl implements ApplicationLoaded {
-  const _$ApplicationLoadedImpl();
+class _$ApplicationLoadedEventImpl implements _ApplicationLoadedEvent {
+  const _$ApplicationLoadedEventImpl();
 
   @override
   String toString() {
@@ -109,7 +111,8 @@ class _$ApplicationLoadedImpl implements ApplicationLoaded {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ApplicationLoadedImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ApplicationLoadedEventImpl);
   }
 
   @override
@@ -152,9 +155,9 @@ class _$ApplicationLoadedImpl implements ApplicationLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ApplicationLoaded value) loaded,
-    required TResult Function(ApplicationLocaleChanged value) localeChanged,
-    required TResult Function(ApplicationDarkModeChanged value) darkModeChanged,
+    required TResult Function(_ApplicationLoadedEvent value) loaded,
+    required TResult Function(_LocaleChangedEvent value) localeChanged,
+    required TResult Function(_DarkModeChangedEvent value) darkModeChanged,
   }) {
     return loaded(this);
   }
@@ -162,9 +165,9 @@ class _$ApplicationLoadedImpl implements ApplicationLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ApplicationLoaded value)? loaded,
-    TResult? Function(ApplicationLocaleChanged value)? localeChanged,
-    TResult? Function(ApplicationDarkModeChanged value)? darkModeChanged,
+    TResult? Function(_ApplicationLoadedEvent value)? loaded,
+    TResult? Function(_LocaleChangedEvent value)? localeChanged,
+    TResult? Function(_DarkModeChangedEvent value)? darkModeChanged,
   }) {
     return loaded?.call(this);
   }
@@ -172,9 +175,9 @@ class _$ApplicationLoadedImpl implements ApplicationLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ApplicationLoaded value)? loaded,
-    TResult Function(ApplicationLocaleChanged value)? localeChanged,
-    TResult Function(ApplicationDarkModeChanged value)? darkModeChanged,
+    TResult Function(_ApplicationLoadedEvent value)? loaded,
+    TResult Function(_LocaleChangedEvent value)? localeChanged,
+    TResult Function(_DarkModeChangedEvent value)? darkModeChanged,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -184,27 +187,25 @@ class _$ApplicationLoadedImpl implements ApplicationLoaded {
   }
 }
 
-abstract class ApplicationLoaded implements ApplicationEvent {
-  const factory ApplicationLoaded() = _$ApplicationLoadedImpl;
+abstract class _ApplicationLoadedEvent implements ApplicationEvent {
+  const factory _ApplicationLoadedEvent() = _$ApplicationLoadedEventImpl;
 }
 
 /// @nodoc
-abstract class _$$ApplicationLocaleChangedImplCopyWith<$Res> {
-  factory _$$ApplicationLocaleChangedImplCopyWith(
-          _$ApplicationLocaleChangedImpl value,
-          $Res Function(_$ApplicationLocaleChangedImpl) then) =
-      __$$ApplicationLocaleChangedImplCopyWithImpl<$Res>;
+abstract class _$$LocaleChangedEventImplCopyWith<$Res> {
+  factory _$$LocaleChangedEventImplCopyWith(_$LocaleChangedEventImpl value,
+          $Res Function(_$LocaleChangedEventImpl) then) =
+      __$$LocaleChangedEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String locale});
 }
 
 /// @nodoc
-class __$$ApplicationLocaleChangedImplCopyWithImpl<$Res>
-    extends _$ApplicationEventCopyWithImpl<$Res, _$ApplicationLocaleChangedImpl>
-    implements _$$ApplicationLocaleChangedImplCopyWith<$Res> {
-  __$$ApplicationLocaleChangedImplCopyWithImpl(
-      _$ApplicationLocaleChangedImpl _value,
-      $Res Function(_$ApplicationLocaleChangedImpl) _then)
+class __$$LocaleChangedEventImplCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res, _$LocaleChangedEventImpl>
+    implements _$$LocaleChangedEventImplCopyWith<$Res> {
+  __$$LocaleChangedEventImplCopyWithImpl(_$LocaleChangedEventImpl _value,
+      $Res Function(_$LocaleChangedEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -212,7 +213,7 @@ class __$$ApplicationLocaleChangedImplCopyWithImpl<$Res>
   $Res call({
     Object? locale = null,
   }) {
-    return _then(_$ApplicationLocaleChangedImpl(
+    return _then(_$LocaleChangedEventImpl(
       locale: null == locale
           ? _value.locale
           : locale // ignore: cast_nullable_to_non_nullable
@@ -223,8 +224,8 @@ class __$$ApplicationLocaleChangedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ApplicationLocaleChangedImpl implements ApplicationLocaleChanged {
-  const _$ApplicationLocaleChangedImpl({required this.locale});
+class _$LocaleChangedEventImpl implements _LocaleChangedEvent {
+  const _$LocaleChangedEventImpl({required this.locale});
 
   @override
   final String locale;
@@ -238,7 +239,7 @@ class _$ApplicationLocaleChangedImpl implements ApplicationLocaleChanged {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ApplicationLocaleChangedImpl &&
+            other is _$LocaleChangedEventImpl &&
             (identical(other.locale, locale) || other.locale == locale));
   }
 
@@ -248,9 +249,9 @@ class _$ApplicationLocaleChangedImpl implements ApplicationLocaleChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ApplicationLocaleChangedImplCopyWith<_$ApplicationLocaleChangedImpl>
-      get copyWith => __$$ApplicationLocaleChangedImplCopyWithImpl<
-          _$ApplicationLocaleChangedImpl>(this, _$identity);
+  _$$LocaleChangedEventImplCopyWith<_$LocaleChangedEventImpl> get copyWith =>
+      __$$LocaleChangedEventImplCopyWithImpl<_$LocaleChangedEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -289,9 +290,9 @@ class _$ApplicationLocaleChangedImpl implements ApplicationLocaleChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ApplicationLoaded value) loaded,
-    required TResult Function(ApplicationLocaleChanged value) localeChanged,
-    required TResult Function(ApplicationDarkModeChanged value) darkModeChanged,
+    required TResult Function(_ApplicationLoadedEvent value) loaded,
+    required TResult Function(_LocaleChangedEvent value) localeChanged,
+    required TResult Function(_DarkModeChangedEvent value) darkModeChanged,
   }) {
     return localeChanged(this);
   }
@@ -299,9 +300,9 @@ class _$ApplicationLocaleChangedImpl implements ApplicationLocaleChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ApplicationLoaded value)? loaded,
-    TResult? Function(ApplicationLocaleChanged value)? localeChanged,
-    TResult? Function(ApplicationDarkModeChanged value)? darkModeChanged,
+    TResult? Function(_ApplicationLoadedEvent value)? loaded,
+    TResult? Function(_LocaleChangedEvent value)? localeChanged,
+    TResult? Function(_DarkModeChangedEvent value)? darkModeChanged,
   }) {
     return localeChanged?.call(this);
   }
@@ -309,9 +310,9 @@ class _$ApplicationLocaleChangedImpl implements ApplicationLocaleChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ApplicationLoaded value)? loaded,
-    TResult Function(ApplicationLocaleChanged value)? localeChanged,
-    TResult Function(ApplicationDarkModeChanged value)? darkModeChanged,
+    TResult Function(_ApplicationLoadedEvent value)? loaded,
+    TResult Function(_LocaleChangedEvent value)? localeChanged,
+    TResult Function(_DarkModeChangedEvent value)? darkModeChanged,
     required TResult orElse(),
   }) {
     if (localeChanged != null) {
@@ -321,34 +322,31 @@ class _$ApplicationLocaleChangedImpl implements ApplicationLocaleChanged {
   }
 }
 
-abstract class ApplicationLocaleChanged implements ApplicationEvent {
-  const factory ApplicationLocaleChanged({required final String locale}) =
-      _$ApplicationLocaleChangedImpl;
+abstract class _LocaleChangedEvent implements ApplicationEvent {
+  const factory _LocaleChangedEvent({required final String locale}) =
+      _$LocaleChangedEventImpl;
 
   String get locale;
   @JsonKey(ignore: true)
-  _$$ApplicationLocaleChangedImplCopyWith<_$ApplicationLocaleChangedImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$LocaleChangedEventImplCopyWith<_$LocaleChangedEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ApplicationDarkModeChangedImplCopyWith<$Res> {
-  factory _$$ApplicationDarkModeChangedImplCopyWith(
-          _$ApplicationDarkModeChangedImpl value,
-          $Res Function(_$ApplicationDarkModeChangedImpl) then) =
-      __$$ApplicationDarkModeChangedImplCopyWithImpl<$Res>;
+abstract class _$$DarkModeChangedEventImplCopyWith<$Res> {
+  factory _$$DarkModeChangedEventImplCopyWith(_$DarkModeChangedEventImpl value,
+          $Res Function(_$DarkModeChangedEventImpl) then) =
+      __$$DarkModeChangedEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool enable});
 }
 
 /// @nodoc
-class __$$ApplicationDarkModeChangedImplCopyWithImpl<$Res>
-    extends _$ApplicationEventCopyWithImpl<$Res,
-        _$ApplicationDarkModeChangedImpl>
-    implements _$$ApplicationDarkModeChangedImplCopyWith<$Res> {
-  __$$ApplicationDarkModeChangedImplCopyWithImpl(
-      _$ApplicationDarkModeChangedImpl _value,
-      $Res Function(_$ApplicationDarkModeChangedImpl) _then)
+class __$$DarkModeChangedEventImplCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res, _$DarkModeChangedEventImpl>
+    implements _$$DarkModeChangedEventImplCopyWith<$Res> {
+  __$$DarkModeChangedEventImplCopyWithImpl(_$DarkModeChangedEventImpl _value,
+      $Res Function(_$DarkModeChangedEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -356,7 +354,7 @@ class __$$ApplicationDarkModeChangedImplCopyWithImpl<$Res>
   $Res call({
     Object? enable = null,
   }) {
-    return _then(_$ApplicationDarkModeChangedImpl(
+    return _then(_$DarkModeChangedEventImpl(
       enable: null == enable
           ? _value.enable
           : enable // ignore: cast_nullable_to_non_nullable
@@ -367,8 +365,8 @@ class __$$ApplicationDarkModeChangedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ApplicationDarkModeChangedImpl implements ApplicationDarkModeChanged {
-  const _$ApplicationDarkModeChangedImpl({required this.enable});
+class _$DarkModeChangedEventImpl implements _DarkModeChangedEvent {
+  const _$DarkModeChangedEventImpl({required this.enable});
 
   @override
   final bool enable;
@@ -382,7 +380,7 @@ class _$ApplicationDarkModeChangedImpl implements ApplicationDarkModeChanged {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ApplicationDarkModeChangedImpl &&
+            other is _$DarkModeChangedEventImpl &&
             (identical(other.enable, enable) || other.enable == enable));
   }
 
@@ -392,9 +390,10 @@ class _$ApplicationDarkModeChangedImpl implements ApplicationDarkModeChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ApplicationDarkModeChangedImplCopyWith<_$ApplicationDarkModeChangedImpl>
-      get copyWith => __$$ApplicationDarkModeChangedImplCopyWithImpl<
-          _$ApplicationDarkModeChangedImpl>(this, _$identity);
+  _$$DarkModeChangedEventImplCopyWith<_$DarkModeChangedEventImpl>
+      get copyWith =>
+          __$$DarkModeChangedEventImplCopyWithImpl<_$DarkModeChangedEventImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -433,9 +432,9 @@ class _$ApplicationDarkModeChangedImpl implements ApplicationDarkModeChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ApplicationLoaded value) loaded,
-    required TResult Function(ApplicationLocaleChanged value) localeChanged,
-    required TResult Function(ApplicationDarkModeChanged value) darkModeChanged,
+    required TResult Function(_ApplicationLoadedEvent value) loaded,
+    required TResult Function(_LocaleChangedEvent value) localeChanged,
+    required TResult Function(_DarkModeChangedEvent value) darkModeChanged,
   }) {
     return darkModeChanged(this);
   }
@@ -443,9 +442,9 @@ class _$ApplicationDarkModeChangedImpl implements ApplicationDarkModeChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ApplicationLoaded value)? loaded,
-    TResult? Function(ApplicationLocaleChanged value)? localeChanged,
-    TResult? Function(ApplicationDarkModeChanged value)? darkModeChanged,
+    TResult? Function(_ApplicationLoadedEvent value)? loaded,
+    TResult? Function(_LocaleChangedEvent value)? localeChanged,
+    TResult? Function(_DarkModeChangedEvent value)? darkModeChanged,
   }) {
     return darkModeChanged?.call(this);
   }
@@ -453,9 +452,9 @@ class _$ApplicationDarkModeChangedImpl implements ApplicationDarkModeChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ApplicationLoaded value)? loaded,
-    TResult Function(ApplicationLocaleChanged value)? localeChanged,
-    TResult Function(ApplicationDarkModeChanged value)? darkModeChanged,
+    TResult Function(_ApplicationLoadedEvent value)? loaded,
+    TResult Function(_LocaleChangedEvent value)? localeChanged,
+    TResult Function(_DarkModeChangedEvent value)? darkModeChanged,
     required TResult orElse(),
   }) {
     if (darkModeChanged != null) {
@@ -465,13 +464,13 @@ class _$ApplicationDarkModeChangedImpl implements ApplicationDarkModeChanged {
   }
 }
 
-abstract class ApplicationDarkModeChanged implements ApplicationEvent {
-  const factory ApplicationDarkModeChanged({required final bool enable}) =
-      _$ApplicationDarkModeChangedImpl;
+abstract class _DarkModeChangedEvent implements ApplicationEvent {
+  const factory _DarkModeChangedEvent({required final bool enable}) =
+      _$DarkModeChangedEventImpl;
 
   bool get enable;
   @JsonKey(ignore: true)
-  _$$ApplicationDarkModeChangedImplCopyWith<_$ApplicationDarkModeChangedImpl>
+  _$$DarkModeChangedEventImplCopyWith<_$DarkModeChangedEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -577,7 +576,7 @@ class __$$ApplicationStateImplCopyWithImpl<$Res>
 class _$ApplicationStateImpl implements _ApplicationState {
   const _$ApplicationStateImpl(
       {this.status = UIStatus.loading,
-      this.locale = 'en',
+      this.locale = AppConfig.defaultLocale,
       this.isDarkMode = false});
 
   @override

@@ -34,17 +34,17 @@ mixin _$MainscreenEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Started value) started,
+    required TResult Function(_Started value) started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Started value)? started,
+    TResult? Function(_Started value)? started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Started value)? started,
+    TResult Function(_Started value)? started,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -86,7 +86,7 @@ class __$$StartedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StartedImpl implements Started {
+class _$StartedImpl implements _Started {
   const _$StartedImpl();
 
   @override
@@ -134,7 +134,7 @@ class _$StartedImpl implements Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Started value) started,
+    required TResult Function(_Started value) started,
   }) {
     return started(this);
   }
@@ -142,7 +142,7 @@ class _$StartedImpl implements Started {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Started value)? started,
+    TResult? Function(_Started value)? started,
   }) {
     return started?.call(this);
   }
@@ -150,7 +150,7 @@ class _$StartedImpl implements Started {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Started value)? started,
+    TResult Function(_Started value)? started,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -160,8 +160,8 @@ class _$StartedImpl implements Started {
   }
 }
 
-abstract class Started implements MainscreenEvent {
-  const factory Started() = _$StartedImpl;
+abstract class _Started implements MainscreenEvent {
+  const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc

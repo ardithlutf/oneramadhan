@@ -15,22 +15,22 @@ part 'application_state.dart';
 part 'application_bloc.freezed.dart';
 
 class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
+  late LocalStorageService _localStorageService;
+  late UserRepository _repo;
+
   ApplicationBloc({
     required LocalStorageService localStorageService,
     required UserRepository repo,
   }) : super(const ApplicationState()) {
     _localStorageService = localStorageService;
     _repo = repo;
-    on<ApplicationLoaded>(_onLoaded);
-    on<ApplicationLocaleChanged>(_onLocaleChanged);
-    on<ApplicationDarkModeChanged>(_onDarkModeChanged);
+    on<_ApplicationLoadedEvent>(_onLoaded);
+    on<_LocaleChangedEvent>(_onLocaleChanged);
+    on<_DarkModeChangedEvent>(_onDarkModeChanged);
   }
 
-  late LocalStorageService _localStorageService;
-  late UserRepository _repo;
-
   FutureOr<void> _onLoaded(
-    ApplicationLoaded event,
+    _ApplicationLoadedEvent event,
     Emitter<ApplicationState> emit,
   ) async {
     emit(state.copyWith(
@@ -59,7 +59,7 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
   }
 
   FutureOr<void> _onLocaleChanged(
-    ApplicationLocaleChanged event,
+    _LocaleChangedEvent event,
     Emitter<ApplicationState> emit,
   ) async {
     if (state.locale != event.locale) {
@@ -78,7 +78,7 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
   }
 
   FutureOr<void> _onDarkModeChanged(
-    ApplicationDarkModeChanged event,
+    _DarkModeChangedEvent event,
     Emitter<ApplicationState> emit,
   ) async {
     if (state.isDarkMode != event.enable) {
