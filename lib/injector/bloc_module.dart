@@ -1,4 +1,6 @@
 import 'package:oneramadhan/features/application/bloc/application_bloc.dart';
+import 'package:oneramadhan/features/login_register/bloc/auth_bloc.dart';
+import 'package:oneramadhan/features/mainscreen/bloc/mainscreen_bloc.dart';
 
 import 'injector.dart';
 
@@ -12,11 +14,8 @@ class BlocModule {
         ApplicationBloc(localStorageService: injector(), repo: injector()));
 
     // TODO: Register bloc here
-    // injector.registerFactory<UserBloc>(
-    //   () => UserBloc(
-    //     userRepository: injector(),
-    //     logService: injector(),
-    //   ),
-    // );
+    injector.registerFactory<AuthBloc>(
+        () => AuthBloc(localStorageService: injector()));
+    injector.registerFactory<MainscreenBloc>(() => MainscreenBloc());
   }
 }

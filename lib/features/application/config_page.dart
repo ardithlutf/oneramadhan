@@ -31,7 +31,7 @@ class _ConfigPageState extends State<ConfigPage> {
         padding: const EdgeInsets.all(AppDimens.basePadding),
         child: Column(
           children: [
-            _buildLangs(),
+            _buildLanguages(),
             AppSpacing.verticalSpacing24,
             _buildDarkMode(),
           ],
@@ -40,7 +40,7 @@ class _ConfigPageState extends State<ConfigPage> {
     );
   }
 
-  Widget _buildLangs() {
+  Widget _buildLanguages() {
     return BlocBuilder<ApplicationBloc, ApplicationState>(
       bloc: _bloc,
       builder: (context, state) {
@@ -50,7 +50,7 @@ class _ConfigPageState extends State<ConfigPage> {
               value: 'en',
               groupValue: state.locale,
               onChanged: (value) {
-                _bloc.add(const ApplicationLocaleChanged(locale: 'en'));
+                _bloc.add(const ApplicationEvent.localeChanged(locale: 'en'));
               },
               title: Text(S.current.english),
             ),
@@ -58,7 +58,7 @@ class _ConfigPageState extends State<ConfigPage> {
               value: 'id',
               groupValue: state.locale,
               onChanged: (value) {
-                _bloc.add(const ApplicationLocaleChanged(locale: 'id'));
+                _bloc.add(const ApplicationEvent.localeChanged(locale: 'id'));
               },
               title: Text(S.current.bahasa),
             ),
@@ -77,7 +77,7 @@ class _ConfigPageState extends State<ConfigPage> {
             SwitchListTile(
               value: state.isDarkMode,
               onChanged: (value) {
-                _bloc.add(ApplicationDarkModeChanged(enable: value));
+                _bloc.add(ApplicationEvent.darkModeChanged(enable: value));
               },
               title: Text(S.current.dark_mode),
             )

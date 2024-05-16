@@ -19,6 +19,8 @@ class SharedPreferencesService implements LocalStorageService {
   String isDarkModeKey = 'isDarkModeKey';
   @override
   String isFirstUseKey = 'isFirstUseKey';
+  @override
+  String isLoggedInKey = 'isLoggedInKey';
 
   @override
   FutureOr<void> init() async {
@@ -36,6 +38,9 @@ class SharedPreferencesService implements LocalStorageService {
   bool get isFirstUse => _pref.getBool(isFirstUseKey) ?? false;
 
   @override
+  bool get isLoggedIn => _pref.getBool(isLoggedInKey) ?? false;
+
+  @override
   String get locale => _pref.getString(localeKey) ?? AppConfig.defaultLocale;
 
   @override
@@ -46,6 +51,11 @@ class SharedPreferencesService implements LocalStorageService {
   @override
   Future<bool> setIsFirstUse(bool isFirstUse) async {
     return await _pref.setBool(isFirstUseKey, isFirstUse);
+  }
+
+  @override
+  Future<bool> setIsLoggedIn(bool isFirstUse) async {
+    return await _pref.setBool(isLoggedInKey, isFirstUse);
   }
 
   @override

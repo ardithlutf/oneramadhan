@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "233530265468",
+    "project_id": "one-ramadhan-ef6ea",
+    "storage_bucket": "one-ramadhan-ef6ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233530265468:android:351b4ae1192564f27ddef9",
+        "android_client_info": {
+          "package_name": "stayupsolution.com.oneramadhan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "233530265468-ogkclc92bd97fjtg1cb0t60861isrgpe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "stayupsolution.com.oneramadhan",
+            "certificate_hash": "6c08cc8c5e60230346f94c649289a58a8488705e"
+          }
+        },
+        {
+          "client_id": "233530265468-ai1g28nsmf9rdp5hncn1vo3a69fiibcd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD--xWh_NLl-LYUPkc_Z2WKkD7wcZB2p24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "233530265468-ai1g28nsmf9rdp5hncn1vo3a69fiibcd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "233530265468-2591tc2l4cie5nf0bq4ko28ldmov4na8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "stayupsolution.com.oneramadhan"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

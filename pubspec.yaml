@@ -56,6 +56,9 @@ dependencies:
   go_router: ^13.1.0
   another_flushbar: ^1.12.30
   shared_preferences: ^2.2.2
+  firebase_core: ^2.31.0
+  firebase_auth: ^4.19.5
+  google_sign_in: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -103,6 +106,7 @@ flutter:
   assets:
     - assets/fonts/
     - assets/images/
+    - assets/icons/
   uses-material-design: true
   fonts:
     - family: Poppins

@@ -1,10 +1,11 @@
 import 'dart:async';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:logger/logger.dart';
 import 'package:oneramadhan/configs/app_config.dart';
-import 'package:oneramadhan/features/application/home_page.dart';
+import 'package:oneramadhan/features/application/home_page_test.dart';
 import 'package:oneramadhan/injector/injector.dart';
 import 'package:oneramadhan/my_app.dart';
 import 'package:oneramadhan/services/crashlytics_service/crashlytics_service.dart';
@@ -19,6 +20,7 @@ void main() async {
     AppConfig.configDev();
     Injector.init();
 
+    await Firebase.initializeApp();
     await Injector.instance.allReady();
 
     runApp(const MyApp());

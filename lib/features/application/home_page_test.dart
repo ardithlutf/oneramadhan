@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     _locale = AppConfig.defaultLocale;
     _bloc = Injector.instance<ApplicationBloc>();
-    _bloc.add(const ApplicationLoaded());
+    _bloc.add(const ApplicationEvent.loaded());
     _isDarkMode = false;
     appLocalizationDelegate = const AppLocalizationDelegate();
     super.initState();
