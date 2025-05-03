@@ -1,0 +1,35 @@
+targets:
+  $default:
+    builders:
+      # Typically the builder key is just the package name, run
+      # `dart run build_runner doctor` to check your config.
+#      drift_dev:
+#        enabled: true
+#        options:
+##          store_date_time_values_as_text: true
+#          skip_verification_code: true
+#          data_class_to_companions: false
+#        generate_for:
+#          - lib/src/resources/providers/*.dart
+      json_annotation:
+        enabled: true
+        generate_for:
+          - lib/src/models/*.dart
+      freezed:
+        options:
+          # Tells Freezed not to format .freezed.dart files.
+          # This can significantly speed up code-generation.
+          format: true
+          # Enable the generation of copyWith/== for the entire project
+          copy_with: true
+          equal: false
+          # `when` and `map` can be enabled/disabled entirely by setting them to `true`/`false`
+          map: false
+          # We can also enable/disable specific variants of `when`/`map` by setting them to `true`/`false`:
+          when:
+            when: true
+            maybe_when: true
+            when_or_null: false
+        generate_for:
+          # Example glob for only the Dart files under `lib/src/blocs`
+          - lib/features/*.dart

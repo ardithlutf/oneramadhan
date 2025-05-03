@@ -1,5 +1,5 @@
 class CustomException implements Exception {
-  CustomException();
+  CustomException({required String message});
 
   /// TODO: implement your exception from json
   CustomException.fromJson(Map<String, dynamic> json);

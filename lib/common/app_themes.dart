@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oneramadhan/common/app_dimens.dart';
 
 class AppThemes {
   AppThemes._();
@@ -40,8 +41,6 @@ class AppThemes {
     onError: Colors.white,
     errorContainer: Color(0xFFFFDAD6),
     onErrorContainer: Color(0xFF410002),
-    background: Color(0xFFE6EBEB),
-    onBackground: Colors.white,
     surfaceTint: Color(0xFFDAD9E0),
     surface: Color(0xFFFAF8FF),
     onSurface: Color(0xFF1A1B20),
@@ -210,12 +209,13 @@ class AppThemes {
   ///Light theme
   static final ThemeData lightTheme = ThemeData(
     colorScheme: lightColorScheme,
+    primaryColor: _lightPrimaryColor,
     scaffoldBackgroundColor: _lightBackgroundColor,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       color: _lightBackgroundColor,
-      iconTheme: const IconThemeData(color: _lightIconColor),
-      toolbarTextStyle: lightTextTheme.bodyText2,
-      titleTextStyle: lightTextTheme.headline6,
+      iconTheme: IconThemeData(color: _lightIconColor),
+      // toolbarTextStyle: lightTextTheme.bodyText2,
+      // titleTextStyle: lightTextTheme.headline6,
     ),
     iconTheme: const IconThemeData(
       color: _lightIconColor,
@@ -260,7 +260,7 @@ class AppThemes {
       selectionHandleColor: const Color(0xFF001442),
     ),
     inputDecorationTheme: InputDecorationTheme(
-      contentPadding: const EdgeInsets.all(12),
+      contentPadding: const EdgeInsets.all(AppDimens.padding12),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
         borderSide: const BorderSide(
@@ -290,11 +290,11 @@ class AppThemes {
     brightness: Brightness.dark,
     primaryColor: _darkPrimaryColor,
     scaffoldBackgroundColor: _darkBackgroundColor,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       color: _darkBackgroundColor,
-      iconTheme: const IconThemeData(color: _darkIconColor),
-      toolbarTextStyle: darkTextTheme.bodyText2,
-      titleTextStyle: darkTextTheme.headline6,
+      iconTheme: IconThemeData(color: _darkIconColor),
+      // toolbarTextStyle: darkTextTheme.bodyText2,
+      // titleTextStyle: darkTextTheme.headline6,
     ),
     iconTheme: const IconThemeData(
       color: _darkIconColor,

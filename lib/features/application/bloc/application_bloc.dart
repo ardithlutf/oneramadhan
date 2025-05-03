@@ -40,7 +40,7 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
     final String locale = _localStorageService.locale;
     final bool isDarkMode = _localStorageService.isDarkMode;
 
-    // API CALL
+    // TODO: API CALL
     try {
       final User user = await _repo.getUser();
 

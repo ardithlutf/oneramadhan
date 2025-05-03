@@ -10,4 +10,13 @@ class AuthState with _$AuthState {
   }) = _AuthState;
 }
 
-enum UIStatus { initial, loading, authSuccess, authFailed, loadSuccess }
+enum UIStatus {
+  initial,
+  loading,
+  loadingAuthCr,
+  loadingAuthGoogle,
+  newUser,
+  authSuccess,
+  authFailed,
+  loadSuccess
+}

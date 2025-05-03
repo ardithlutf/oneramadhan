@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:oneramadhan/common/app_dimens.dart';
+import 'package:oneramadhan/common/app_spacing.dart';
 import 'package:oneramadhan/features/login_register/bloc/auth_bloc.dart';
 import 'package:oneramadhan/features/login_register/function/auth_functions.dart';
 import 'package:oneramadhan/injector/injector.dart';
+import 'package:oneramadhan/widgets/loading_widget.dart';
 
 import '../../../../generated/assets.gen.dart';
 import '../../../../generated/l10n.dart';
@@ -57,22 +60,22 @@ class _OnBoardingPageState extends State<OnBoardingPage>
           body: SafeArea(
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(AppDimens.padding16),
                 child: Column(
                   children: [
-                    const SizedBox(height: 8),
+                    AppSpacing.verticalSpacing8,
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Assets.images.oneRamadhan1.svg(),
                     ),
-                    const SizedBox(height: 44),
+                    AppSpacing.verticalSpacing44,
                     Assets.images.ilustration1.image(),
                     Text(
                       S.current.intro_onboarding,
                       style: Theme.of(context).textTheme.titleMedium,
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 82),
+                    AppSpacing.verticalSpacing82,
                     SizedBox(
                       height: 48,
                       width: double.infinity,
@@ -80,16 +83,10 @@ class _OnBoardingPageState extends State<OnBoardingPage>
                         onPressed: () {
                           context.push(AppRouter.register);
                         },
-                        child: Text(
-                          S.current.create_account,
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(color: Colors.white),
-                        ),
+                        child: Text(S.current.create_account),
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    AppSpacing.verticalSpacing16,
                     SizedBox(
                       height: 48,
                       width: double.infinity,
@@ -106,7 +103,7 @@ class _OnBoardingPageState extends State<OnBoardingPage>
                         ),
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    AppSpacing.verticalSpacing16,
                   ],
                 ),
               ),
@@ -115,17 +112,15 @@ class _OnBoardingPageState extends State<OnBoardingPage>
           bottomNavigationBar: AbsorbPointer(
             absorbing: _isLoading,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12),
+              padding:
+                  const EdgeInsets.symmetric(vertical: AppDimens.padding12),
               child: TextButton(
                 style: TextButton.styleFrom(foregroundColor: Colors.white),
                 onPressed: () {
                   _authBloc.add(const AuthEvent.authGuest());
                 },
                 child: _isLoading
-                    ? const SizedBox(
-                        width: 15,
-                        height: 15,
-                        child: CircularProgressIndicator(strokeWidth: 3))
+                    ? LoadingWidget.circularPrimary
                     : Text(
                         S.current.login_as_guest,
                         style: Theme.of(context)

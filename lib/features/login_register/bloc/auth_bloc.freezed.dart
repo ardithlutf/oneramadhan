@@ -19,27 +19,34 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(String email, String password, String password2)
+        createAccount,
     required TResult Function() authGuest,
     required TResult Function() authGoogle,
-    required TResult Function() authEmailPassword,
+    required TResult Function(String username, String password)
+        authEmailPassword,
     required TResult Function() authSingOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(String email, String password, String password2)?
+        createAccount,
     TResult? Function()? authGuest,
     TResult? Function()? authGoogle,
-    TResult? Function()? authEmailPassword,
+    TResult? Function(String username, String password)? authEmailPassword,
     TResult? Function()? authSingOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(String email, String password, String password2)?
+        createAccount,
     TResult Function()? authGuest,
     TResult Function()? authGoogle,
-    TResult Function()? authEmailPassword,
+    TResult Function(String username, String password)? authEmailPassword,
     TResult Function()? authSingOut,
     required TResult orElse(),
   }) =>
@@ -47,6 +54,7 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_StartedEvent value) started,
+    required TResult Function(_CreateAccountEvent value) createAccount,
     required TResult Function(_GuestEvent value) authGuest,
     required TResult Function(_GoogleEvent value) authGoogle,
     required TResult Function(_EmailPasswordEvent value) authEmailPassword,
@@ -56,6 +64,7 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_CreateAccountEvent value)? createAccount,
     TResult? Function(_GuestEvent value)? authGuest,
     TResult? Function(_GoogleEvent value)? authGoogle,
     TResult? Function(_EmailPasswordEvent value)? authEmailPassword,
@@ -65,6 +74,7 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_StartedEvent value)? started,
+    TResult Function(_CreateAccountEvent value)? createAccount,
     TResult Function(_GuestEvent value)? authGuest,
     TResult Function(_GoogleEvent value)? authGoogle,
     TResult Function(_EmailPasswordEvent value)? authEmailPassword,
@@ -136,9 +146,12 @@ class _$StartedEventImpl with DiagnosticableTreeMixin implements _StartedEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(String email, String password, String password2)
+        createAccount,
     required TResult Function() authGuest,
     required TResult Function() authGoogle,
-    required TResult Function() authEmailPassword,
+    required TResult Function(String username, String password)
+        authEmailPassword,
     required TResult Function() authSingOut,
   }) {
     return started();
@@ -148,9 +161,11 @@ class _$StartedEventImpl with DiagnosticableTreeMixin implements _StartedEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(String email, String password, String password2)?
+        createAccount,
     TResult? Function()? authGuest,
     TResult? Function()? authGoogle,
-    TResult? Function()? authEmailPassword,
+    TResult? Function(String username, String password)? authEmailPassword,
     TResult? Function()? authSingOut,
   }) {
     return started?.call();
@@ -160,9 +175,11 @@ class _$StartedEventImpl with DiagnosticableTreeMixin implements _StartedEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(String email, String password, String password2)?
+        createAccount,
     TResult Function()? authGuest,
     TResult Function()? authGoogle,
-    TResult Function()? authEmailPassword,
+    TResult Function(String username, String password)? authEmailPassword,
     TResult Function()? authSingOut,
     required TResult orElse(),
   }) {
@@ -176,6 +193,7 @@ class _$StartedEventImpl with DiagnosticableTreeMixin implements _StartedEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_StartedEvent value) started,
+    required TResult Function(_CreateAccountEvent value) createAccount,
     required TResult Function(_GuestEvent value) authGuest,
     required TResult Function(_GoogleEvent value) authGoogle,
     required TResult Function(_EmailPasswordEvent value) authEmailPassword,
@@ -188,6 +206,7 @@ class _$StartedEventImpl with DiagnosticableTreeMixin implements _StartedEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_CreateAccountEvent value)? createAccount,
     TResult? Function(_GuestEvent value)? authGuest,
     TResult? Function(_GoogleEvent value)? authGoogle,
     TResult? Function(_EmailPasswordEvent value)? authEmailPassword,
@@ -200,6 +219,7 @@ class _$StartedEventImpl with DiagnosticableTreeMixin implements _StartedEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_StartedEvent value)? started,
+    TResult Function(_CreateAccountEvent value)? createAccount,
     TResult Function(_GuestEvent value)? authGuest,
     TResult Function(_GoogleEvent value)? authGoogle,
     TResult Function(_EmailPasswordEvent value)? authEmailPassword,
@@ -215,6 +235,204 @@ class _$StartedEventImpl with DiagnosticableTreeMixin implements _StartedEvent {
 
 abstract class _StartedEvent implements AuthEvent {
   const factory _StartedEvent() = _$StartedEventImpl;
+}
+
+/// @nodoc
+abstract class _$$CreateAccountEventImplCopyWith<$Res> {
+  factory _$$CreateAccountEventImplCopyWith(_$CreateAccountEventImpl value,
+          $Res Function(_$CreateAccountEventImpl) then) =
+      __$$CreateAccountEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String email, String password, String password2});
+}
+
+/// @nodoc
+class __$$CreateAccountEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$CreateAccountEventImpl>
+    implements _$$CreateAccountEventImplCopyWith<$Res> {
+  __$$CreateAccountEventImplCopyWithImpl(_$CreateAccountEventImpl _value,
+      $Res Function(_$CreateAccountEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+    Object? password = null,
+    Object? password2 = null,
+  }) {
+    return _then(_$CreateAccountEventImpl(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      password2: null == password2
+          ? _value.password2
+          : password2 // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CreateAccountEventImpl
+    with DiagnosticableTreeMixin
+    implements _CreateAccountEvent {
+  const _$CreateAccountEventImpl(
+      {required this.email, required this.password, required this.password2});
+
+  @override
+  final String email;
+  @override
+  final String password;
+  @override
+  final String password2;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AuthEvent.createAccount(email: $email, password: $password, password2: $password2)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AuthEvent.createAccount'))
+      ..add(DiagnosticsProperty('email', email))
+      ..add(DiagnosticsProperty('password', password))
+      ..add(DiagnosticsProperty('password2', password2));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateAccountEventImpl &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.password2, password2) ||
+                other.password2 == password2));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, email, password, password2);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CreateAccountEventImplCopyWith<_$CreateAccountEventImpl> get copyWith =>
+      __$$CreateAccountEventImplCopyWithImpl<_$CreateAccountEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String email, String password, String password2)
+        createAccount,
+    required TResult Function() authGuest,
+    required TResult Function() authGoogle,
+    required TResult Function(String username, String password)
+        authEmailPassword,
+    required TResult Function() authSingOut,
+  }) {
+    return createAccount(email, password, password2);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String email, String password, String password2)?
+        createAccount,
+    TResult? Function()? authGuest,
+    TResult? Function()? authGoogle,
+    TResult? Function(String username, String password)? authEmailPassword,
+    TResult? Function()? authSingOut,
+  }) {
+    return createAccount?.call(email, password, password2);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String email, String password, String password2)?
+        createAccount,
+    TResult Function()? authGuest,
+    TResult Function()? authGoogle,
+    TResult Function(String username, String password)? authEmailPassword,
+    TResult Function()? authSingOut,
+    required TResult orElse(),
+  }) {
+    if (createAccount != null) {
+      return createAccount(email, password, password2);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StartedEvent value) started,
+    required TResult Function(_CreateAccountEvent value) createAccount,
+    required TResult Function(_GuestEvent value) authGuest,
+    required TResult Function(_GoogleEvent value) authGoogle,
+    required TResult Function(_EmailPasswordEvent value) authEmailPassword,
+    required TResult Function(_AuthSingOutEvent value) authSingOut,
+  }) {
+    return createAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_CreateAccountEvent value)? createAccount,
+    TResult? Function(_GuestEvent value)? authGuest,
+    TResult? Function(_GoogleEvent value)? authGoogle,
+    TResult? Function(_EmailPasswordEvent value)? authEmailPassword,
+    TResult? Function(_AuthSingOutEvent value)? authSingOut,
+  }) {
+    return createAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StartedEvent value)? started,
+    TResult Function(_CreateAccountEvent value)? createAccount,
+    TResult Function(_GuestEvent value)? authGuest,
+    TResult Function(_GoogleEvent value)? authGoogle,
+    TResult Function(_EmailPasswordEvent value)? authEmailPassword,
+    TResult Function(_AuthSingOutEvent value)? authSingOut,
+    required TResult orElse(),
+  }) {
+    if (createAccount != null) {
+      return createAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CreateAccountEvent implements AuthEvent {
+  const factory _CreateAccountEvent(
+      {required final String email,
+      required final String password,
+      required final String password2}) = _$CreateAccountEventImpl;
+
+  String get email;
+  String get password;
+  String get password2;
+  @JsonKey(ignore: true)
+  _$$CreateAccountEventImplCopyWith<_$CreateAccountEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -262,9 +480,12 @@ class _$GuestEventImpl with DiagnosticableTreeMixin implements _GuestEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(String email, String password, String password2)
+        createAccount,
     required TResult Function() authGuest,
     required TResult Function() authGoogle,
-    required TResult Function() authEmailPassword,
+    required TResult Function(String username, String password)
+        authEmailPassword,
     required TResult Function() authSingOut,
   }) {
     return authGuest();
@@ -274,9 +495,11 @@ class _$GuestEventImpl with DiagnosticableTreeMixin implements _GuestEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(String email, String password, String password2)?
+        createAccount,
     TResult? Function()? authGuest,
     TResult? Function()? authGoogle,
-    TResult? Function()? authEmailPassword,
+    TResult? Function(String username, String password)? authEmailPassword,
     TResult? Function()? authSingOut,
   }) {
     return authGuest?.call();
@@ -286,9 +509,11 @@ class _$GuestEventImpl with DiagnosticableTreeMixin implements _GuestEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(String email, String password, String password2)?
+        createAccount,
     TResult Function()? authGuest,
     TResult Function()? authGoogle,
-    TResult Function()? authEmailPassword,
+    TResult Function(String username, String password)? authEmailPassword,
     TResult Function()? authSingOut,
     required TResult orElse(),
   }) {
@@ -302,6 +527,7 @@ class _$GuestEventImpl with DiagnosticableTreeMixin implements _GuestEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_StartedEvent value) started,
+    required TResult Function(_CreateAccountEvent value) createAccount,
     required TResult Function(_GuestEvent value) authGuest,
     required TResult Function(_GoogleEvent value) authGoogle,
     required TResult Function(_EmailPasswordEvent value) authEmailPassword,
@@ -314,6 +540,7 @@ class _$GuestEventImpl with DiagnosticableTreeMixin implements _GuestEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_CreateAccountEvent value)? createAccount,
     TResult? Function(_GuestEvent value)? authGuest,
     TResult? Function(_GoogleEvent value)? authGoogle,
     TResult? Function(_EmailPasswordEvent value)? authEmailPassword,
@@ -326,6 +553,7 @@ class _$GuestEventImpl with DiagnosticableTreeMixin implements _GuestEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_StartedEvent value)? started,
+    TResult Function(_CreateAccountEvent value)? createAccount,
     TResult Function(_GuestEvent value)? authGuest,
     TResult Function(_GoogleEvent value)? authGoogle,
     TResult Function(_EmailPasswordEvent value)? authEmailPassword,
@@ -388,9 +616,12 @@ class _$GoogleEventImpl with DiagnosticableTreeMixin implements _GoogleEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(String email, String password, String password2)
+        createAccount,
     required TResult Function() authGuest,
     required TResult Function() authGoogle,
-    required TResult Function() authEmailPassword,
+    required TResult Function(String username, String password)
+        authEmailPassword,
     required TResult Function() authSingOut,
   }) {
     return authGoogle();
@@ -400,9 +631,11 @@ class _$GoogleEventImpl with DiagnosticableTreeMixin implements _GoogleEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(String email, String password, String password2)?
+        createAccount,
     TResult? Function()? authGuest,
     TResult? Function()? authGoogle,
-    TResult? Function()? authEmailPassword,
+    TResult? Function(String username, String password)? authEmailPassword,
     TResult? Function()? authSingOut,
   }) {
     return authGoogle?.call();
@@ -412,9 +645,11 @@ class _$GoogleEventImpl with DiagnosticableTreeMixin implements _GoogleEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(String email, String password, String password2)?
+        createAccount,
     TResult Function()? authGuest,
     TResult Function()? authGoogle,
-    TResult Function()? authEmailPassword,
+    TResult Function(String username, String password)? authEmailPassword,
     TResult Function()? authSingOut,
     required TResult orElse(),
   }) {
@@ -428,6 +663,7 @@ class _$GoogleEventImpl with DiagnosticableTreeMixin implements _GoogleEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_StartedEvent value) started,
+    required TResult Function(_CreateAccountEvent value) createAccount,
     required TResult Function(_GuestEvent value) authGuest,
     required TResult Function(_GoogleEvent value) authGoogle,
     required TResult Function(_EmailPasswordEvent value) authEmailPassword,
@@ -440,6 +676,7 @@ class _$GoogleEventImpl with DiagnosticableTreeMixin implements _GoogleEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_CreateAccountEvent value)? createAccount,
     TResult? Function(_GuestEvent value)? authGuest,
     TResult? Function(_GoogleEvent value)? authGoogle,
     TResult? Function(_EmailPasswordEvent value)? authEmailPassword,
@@ -452,6 +689,7 @@ class _$GoogleEventImpl with DiagnosticableTreeMixin implements _GoogleEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_StartedEvent value)? started,
+    TResult Function(_CreateAccountEvent value)? createAccount,
     TResult Function(_GuestEvent value)? authGuest,
     TResult Function(_GoogleEvent value)? authGoogle,
     TResult Function(_EmailPasswordEvent value)? authEmailPassword,
@@ -474,6 +712,8 @@ abstract class _$$EmailPasswordEventImplCopyWith<$Res> {
   factory _$$EmailPasswordEventImplCopyWith(_$EmailPasswordEventImpl value,
           $Res Function(_$EmailPasswordEventImpl) then) =
       __$$EmailPasswordEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String username, String password});
 }
 
 /// @nodoc
@@ -483,6 +723,24 @@ class __$$EmailPasswordEventImplCopyWithImpl<$Res>
   __$$EmailPasswordEventImplCopyWithImpl(_$EmailPasswordEventImpl _value,
       $Res Function(_$EmailPasswordEventImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? username = null,
+    Object? password = null,
+  }) {
+    return _then(_$EmailPasswordEventImpl(
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
@@ -490,64 +748,92 @@ class __$$EmailPasswordEventImplCopyWithImpl<$Res>
 class _$EmailPasswordEventImpl
     with DiagnosticableTreeMixin
     implements _EmailPasswordEvent {
-  const _$EmailPasswordEventImpl();
+  const _$EmailPasswordEventImpl(
+      {required this.username, required this.password});
+
+  @override
+  final String username;
+  @override
+  final String password;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AuthEvent.authEmailPassword()';
+    return 'AuthEvent.authEmailPassword(username: $username, password: $password)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'AuthEvent.authEmailPassword'));
+    properties
+      ..add(DiagnosticsProperty('type', 'AuthEvent.authEmailPassword'))
+      ..add(DiagnosticsProperty('username', username))
+      ..add(DiagnosticsProperty('password', password));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$EmailPasswordEventImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$EmailPasswordEventImpl &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, username, password);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EmailPasswordEventImplCopyWith<_$EmailPasswordEventImpl> get copyWith =>
+      __$$EmailPasswordEventImplCopyWithImpl<_$EmailPasswordEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(String email, String password, String password2)
+        createAccount,
     required TResult Function() authGuest,
     required TResult Function() authGoogle,
-    required TResult Function() authEmailPassword,
+    required TResult Function(String username, String password)
+        authEmailPassword,
     required TResult Function() authSingOut,
   }) {
-    return authEmailPassword();
+    return authEmailPassword(username, password);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(String email, String password, String password2)?
+        createAccount,
     TResult? Function()? authGuest,
     TResult? Function()? authGoogle,
-    TResult? Function()? authEmailPassword,
+    TResult? Function(String username, String password)? authEmailPassword,
     TResult? Function()? authSingOut,
   }) {
-    return authEmailPassword?.call();
+    return authEmailPassword?.call(username, password);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(String email, String password, String password2)?
+        createAccount,
     TResult Function()? authGuest,
     TResult Function()? authGoogle,
-    TResult Function()? authEmailPassword,
+    TResult Function(String username, String password)? authEmailPassword,
     TResult Function()? authSingOut,
     required TResult orElse(),
   }) {
     if (authEmailPassword != null) {
-      return authEmailPassword();
+      return authEmailPassword(username, password);
     }
     return orElse();
   }
@@ -556,6 +842,7 @@ class _$EmailPasswordEventImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_StartedEvent value) started,
+    required TResult Function(_CreateAccountEvent value) createAccount,
     required TResult Function(_GuestEvent value) authGuest,
     required TResult Function(_GoogleEvent value) authGoogle,
     required TResult Function(_EmailPasswordEvent value) authEmailPassword,
@@ -568,6 +855,7 @@ class _$EmailPasswordEventImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_CreateAccountEvent value)? createAccount,
     TResult? Function(_GuestEvent value)? authGuest,
     TResult? Function(_GoogleEvent value)? authGoogle,
     TResult? Function(_EmailPasswordEvent value)? authEmailPassword,
@@ -580,6 +868,7 @@ class _$EmailPasswordEventImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_StartedEvent value)? started,
+    TResult Function(_CreateAccountEvent value)? createAccount,
     TResult Function(_GuestEvent value)? authGuest,
     TResult Function(_GoogleEvent value)? authGoogle,
     TResult Function(_EmailPasswordEvent value)? authEmailPassword,
@@ -594,7 +883,15 @@ class _$EmailPasswordEventImpl
 }
 
 abstract class _EmailPasswordEvent implements AuthEvent {
-  const factory _EmailPasswordEvent() = _$EmailPasswordEventImpl;
+  const factory _EmailPasswordEvent(
+      {required final String username,
+      required final String password}) = _$EmailPasswordEventImpl;
+
+  String get username;
+  String get password;
+  @JsonKey(ignore: true)
+  _$$EmailPasswordEventImplCopyWith<_$EmailPasswordEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -644,9 +941,12 @@ class _$AuthSingOutEventImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(String email, String password, String password2)
+        createAccount,
     required TResult Function() authGuest,
     required TResult Function() authGoogle,
-    required TResult Function() authEmailPassword,
+    required TResult Function(String username, String password)
+        authEmailPassword,
     required TResult Function() authSingOut,
   }) {
     return authSingOut();
@@ -656,9 +956,11 @@ class _$AuthSingOutEventImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(String email, String password, String password2)?
+        createAccount,
     TResult? Function()? authGuest,
     TResult? Function()? authGoogle,
-    TResult? Function()? authEmailPassword,
+    TResult? Function(String username, String password)? authEmailPassword,
     TResult? Function()? authSingOut,
   }) {
     return authSingOut?.call();
@@ -668,9 +970,11 @@ class _$AuthSingOutEventImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(String email, String password, String password2)?
+        createAccount,
     TResult Function()? authGuest,
     TResult Function()? authGoogle,
-    TResult Function()? authEmailPassword,
+    TResult Function(String username, String password)? authEmailPassword,
     TResult Function()? authSingOut,
     required TResult orElse(),
   }) {
@@ -684,6 +988,7 @@ class _$AuthSingOutEventImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_StartedEvent value) started,
+    required TResult Function(_CreateAccountEvent value) createAccount,
     required TResult Function(_GuestEvent value) authGuest,
     required TResult Function(_GoogleEvent value) authGoogle,
     required TResult Function(_EmailPasswordEvent value) authEmailPassword,
@@ -696,6 +1001,7 @@ class _$AuthSingOutEventImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_CreateAccountEvent value)? createAccount,
     TResult? Function(_GuestEvent value)? authGuest,
     TResult? Function(_GoogleEvent value)? authGoogle,
     TResult? Function(_EmailPasswordEvent value)? authEmailPassword,
@@ -708,6 +1014,7 @@ class _$AuthSingOutEventImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_StartedEvent value)? started,
+    TResult Function(_CreateAccountEvent value)? createAccount,
     TResult Function(_GuestEvent value)? authGuest,
     TResult Function(_GoogleEvent value)? authGoogle,
     TResult Function(_EmailPasswordEvent value)? authEmailPassword,

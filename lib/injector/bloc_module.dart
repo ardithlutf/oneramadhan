@@ -16,6 +16,6 @@ class BlocModule {
     // TODO: Register bloc here
     injector.registerFactory<AuthBloc>(
         () => AuthBloc(localStorageService: injector()));
-    injector.registerFactory<MainscreenBloc>(() => MainscreenBloc());
+    injector.registerFactory<MainScreenBloc>(() => MainScreenBloc());
   }
 }

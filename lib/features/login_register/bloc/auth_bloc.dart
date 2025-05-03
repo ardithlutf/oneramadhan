@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
@@ -21,11 +20,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     _localStorageService = localStorageService;
 
     on<_StartedEvent>(_onStarted);
+    on<_CreateAccountEvent>(_onCreateAccount);
     on<_GuestEvent>(_onLoginGuest);
     on<_GoogleEvent>(_onLoginGoogle);
-    on<_AuthSingOutEvent>(_onLogout);
     // TODO:
-    // on<_EmailPasswordEvent>(_onLoginEmailPassword);
+    on<_EmailPasswordEvent>(_onLoginEmailPassword);
+    on<_AuthSingOutEvent>(_onLogout);
   }
 
   FutureOr<void> _onStarted(_StartedEvent event, Emitter<AuthState> emit) {
@@ -36,6 +36,44 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(state.copyWith(
       status: UIStatus.loadSuccess,
     ));
+  }
+
+  FutureOr<void> _onCreateAccount(
+      _CreateAccountEvent event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(
+      status: UIStatus.loading,
+    ));
+
+    if (event.email.isEmpty ||
+        event.password.isEmpty ||
+        event.password2.isEmpty) {
+      emit(state.copyWith(
+        status: UIStatus.authFailed,
+        error: 'Please fill all data below',
+      ));
+    } else {
+      if (event.password != event.password2) {
+        emit(state.copyWith(
+          status: UIStatus.authFailed,
+          error: 'Password doesn\'t match',
+        ));
+      } else {
+        try {
+          await Future.delayed(const Duration(seconds: 1));
+
+          await signOutFromGoogle();
+
+          _localStorageService.setIsLoggedIn(true);
+
+          emit(state.copyWith(status: UIStatus.newUser));
+        } catch (e) {
+          emit(state.copyWith(
+            status: UIStatus.authFailed,
+            error: 'Sign up failed.',
+          ));
+        }
+      }
+    }
   }
 
   FutureOr<void> _onLoginGuest(
@@ -63,7 +101,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> _onLoginGoogle(
       _GoogleEvent event, Emitter<AuthState> emit) async {
     emit(state.copyWith(
-      status: UIStatus.loading,
+      status: UIStatus.loadingAuthGoogle,
     ));
 
     try {
@@ -84,6 +122,33 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         status: UIStatus.authFailed,
         error: 'Google sign in failed. Please try again',
       ));
+    }
+  }
+
+  FutureOr<void> _onLoginEmailPassword(
+      _EmailPasswordEvent event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(
+      status: UIStatus.loadingAuthCr,
+    ));
+
+    if (event.username.isEmpty || event.password.isEmpty) {
+      emit(state.copyWith(
+        status: UIStatus.authFailed,
+        error: 'Username or password can\'t be empty',
+      ));
+    } else {
+      await Future.delayed(const Duration(seconds: 1));
+
+      if (event.username == 'admin' && event.password == 'one1') {
+        _localStorageService.setIsLoggedIn(true);
+
+        emit(state.copyWith(status: UIStatus.authSuccess));
+      } else {
+        emit(state.copyWith(
+          status: UIStatus.authFailed,
+          error: 'Account not found',
+        ));
+      }
     }
   }
 

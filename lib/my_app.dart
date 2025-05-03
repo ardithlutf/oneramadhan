@@ -36,9 +36,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<ApplicationBloc>.value(
-          value: _bloc,
-        ),
+        BlocProvider<ApplicationBloc>.value(value: _bloc),
       ],
       child: BlocListener<ApplicationBloc, ApplicationState>(
         bloc: _bloc,

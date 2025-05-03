@@ -12,13 +12,16 @@ class SimpleGlobalSnackBar {
 
   static show(
     BuildContext context,
+    SnackBarBehavior behavior,
     String message,
     TypeSnackbarEnum snackbarEnum,
   ) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         // showCloseIcon: true,
-        backgroundColor: snackbarEnum == TypeSnackbarEnum.success ? const Color(0xFF163375) : Colors.red,
+        backgroundColor: snackbarEnum == TypeSnackbarEnum.success
+            ? const Color(0xFF163375)
+            : Colors.red,
         elevation: 0.0,
         dismissDirection: DismissDirection.up,
         margin: EdgeInsets.only(

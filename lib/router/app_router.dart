@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:oneramadhan/features/mainscreen/mainscreen_page.dart';
+import 'package:oneramadhan/features/mainscreen/view/home_page.dart';
 import 'package:oneramadhan/injector/injector.dart';
 import 'package:oneramadhan/services/local_storage_service/local_storage_service.dart';
 
@@ -23,9 +23,9 @@ class AppRouter {
     routes: <GoRoute>[
       GoRoute(
         redirect: (BuildContext context, GoRouterState state) {
-          final bool _isAlreadyLoggedIn =
+          final bool isAlreadyLoggedIn =
               Injector.instance<LocalStorageService>().isLoggedIn;
-          if (_isAlreadyLoggedIn) {
+          if (isAlreadyLoggedIn) {
             return AppRouter.mainscreen;
           } else {
             return AppRouter.home;
@@ -36,7 +36,7 @@ class AppRouter {
       ),
       GoRoute(
         path: login,
-        builder: (context, state) => LoginPage(),
+        builder: (context, state) => const LoginPage(),
       ),
       GoRoute(
         path: register,

@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:oneramadhan/common/app_enums.dart';
 import 'package:oneramadhan/common/app_snackbar.dart';
@@ -10,10 +11,11 @@ mixin AuthFunctionMixin {
       BuildContext context, AuthState state, String displayName) {
     SimpleGlobalSnackBar.show(
         context,
+        SnackBarBehavior.floating,
         'You are logged in as ${state.loginAs.name == 'guest' ? 'guest' : displayName}',
         TypeSnackbarEnum.success);
 
-    context.pushReplacement(AppRouter.home);
+    context.go(AppRouter.mainscreen);
   }
 
   handleAuthSignOutSuccess(BuildContext context, AuthState state) {
@@ -21,6 +23,7 @@ mixin AuthFunctionMixin {
   }
 
   handleAuthFailed(BuildContext context, AuthState state) {
-    SimpleGlobalSnackBar.show(context, state.error, TypeSnackbarEnum.failed);
+    SimpleGlobalSnackBar.show(context, SnackBarBehavior.floating, state.error,
+        TypeSnackbarEnum.failed);
   }
 }
