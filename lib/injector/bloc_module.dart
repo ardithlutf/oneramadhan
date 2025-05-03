@@ -9,7 +9,7 @@ import 'injector.dart';
 class BlocModule {
   BlocModule._();
 
-  static void init() {
+  static Future<void> init() async {
     final injector = Injector.instance;
 
     injector.registerSingleton<ApplicationBloc>(

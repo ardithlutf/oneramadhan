@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesService implements LocalStorageService {
   SharedPreferencesService() {
-    init();
+    initialize();
   }
   late final SharedPreferences _pref;
 
@@ -23,7 +23,7 @@ class SharedPreferencesService implements LocalStorageService {
   String isLoggedInKey = 'isLoggedInKey';
 
   @override
-  FutureOr<void> init() async {
+  FutureOr<void> initialize() async {
     _pref = await SharedPreferences.getInstance();
     Injector.instance.signalReady(this);
   }

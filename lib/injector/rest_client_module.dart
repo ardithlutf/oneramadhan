@@ -7,7 +7,7 @@ import 'package:rest_api/rest_api.dart';
 class RestClientModule {
   RestClientModule._();
 
-  static void init() {
+  static Future<void> init() async {
     final injector = Injector.instance;
     const String dioInstance = 'dioInstance';
 

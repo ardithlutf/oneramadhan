@@ -6,7 +6,7 @@ import 'injector.dart';
 class RepositoryModule {
   RepositoryModule._();
 
-  static void init() {
+  static Future<void> init() async {
     final injector = Injector.instance;
 
     injector.registerFactory<UserRepository>(

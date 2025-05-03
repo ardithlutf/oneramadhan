@@ -61,6 +61,7 @@ dependencies:
   google_sign_in: ^6.2.2
   analyzer: ^6.7.0
   google_sign_in_ios: ^5.9.0
+  firebase_crashlytics: ^3.5.7
 
 dev_dependencies:
   flutter_test:

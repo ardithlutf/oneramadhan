@@ -7,7 +7,7 @@ abstract class LocalStorageService {
   String isFirstUseKey = '';
   String isLoggedInKey = '';
 
-  FutureOr<void> init();
+  FutureOr<void> initialize();
   String? get token;
   String get locale;
   bool get isDarkMode;
