@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:oneramadhan/features/mainscreen/view/home_page.dart';
+import 'package:oneramadhan/features/login_register/complete_register/view/complete_register_page.dart';
+import 'package:oneramadhan/features/login_register/login/view/login_page.dart';
+import 'package:oneramadhan/features/login_register/onboarding/view/onboarding_page.dart';
+import 'package:oneramadhan/features/login_register/register/view/register_page.dart';
+import 'package:oneramadhan/features/mainscreen/home_page.dart';
+import 'package:oneramadhan/features/profile/profile_page.dart';
 import 'package:oneramadhan/injector/injector.dart';
 import 'package:oneramadhan/services/local_storage_service/local_storage_service.dart';
-
-import '../features/login_register/complete_register/view/complete_register_page.dart';
-import '../features/login_register/login/view/login_page.dart';
-import '../features/login_register/onboarding/view/onboarding_page.dart';
-import '../features/login_register/register/view/register_page.dart';
 
 class AppRouter {
   AppRouter._();
@@ -17,6 +17,7 @@ class AppRouter {
   static const String register = '/register';
   static const String completeRegister = '/complete-register';
   static const String mainscreen = '/mainscreen';
+  static const String profile = '/profile';
 
   static GoRouter get router => _router;
   static final _router = GoRouter(
@@ -49,6 +50,10 @@ class AppRouter {
       GoRoute(
         path: mainscreen,
         builder: (context, state) => const MainScreenPage(),
+      ),
+      GoRoute(
+        path: profile,
+        builder: (context, state) => const ProfileScreen(),
       ),
     ],
   );

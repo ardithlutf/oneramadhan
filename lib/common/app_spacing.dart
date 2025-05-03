@@ -29,4 +29,5 @@ class AppSpacing {
   static const verticalSpacing50 = SizedBox(height: 50);
   static const verticalSpacing48 = SizedBox(height: 48);
   static const verticalSpacing82 = SizedBox(height: 82);
+  static const verticalSpacing240 = SizedBox(height: 240);
 }

@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:oneramadhan/features/mainscreen/view/home_page.dart';
+import 'package:oneramadhan/features/mainscreen/home_page.dart';
 import 'package:oneramadhan/generated/l10n.dart';
 import 'package:oneramadhan/injector/injector.dart';
 import 'package:shared_preferences/shared_preferences.dart';

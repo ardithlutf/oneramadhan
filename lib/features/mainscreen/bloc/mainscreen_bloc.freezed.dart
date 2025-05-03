@@ -21,30 +21,10 @@ mixin _$MainscreenEvent {
     required TResult Function() started,
   }) =>
       throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-  }) =>
-      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -66,6 +46,9 @@ class _$MainscreenEventCopyWithImpl<$Res, $Val extends MainscreenEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of MainscreenEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -82,6 +65,9 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of MainscreenEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -95,28 +81,11 @@ class _$StartedImpl implements _Started {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
   }) {
     return started();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-  }) {
-    return started?.call();
   }
 
   @override
@@ -127,34 +96,6 @@ class _$StartedImpl implements _Started {
   }) {
     if (started != null) {
       return started();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-  }) {
-    return started(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-  }) {
-    return started?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started(this);
     }
     return orElse();
   }
@@ -169,8 +110,23 @@ mixin _$MainscreenState {
   UIStatus get status => throw _privateConstructorUsedError;
   String get locale => throw _privateConstructorUsedError;
   bool get isDarkMode => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(UIStatus status, String locale, bool isDarkMode) $default,
+  ) =>
+      throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(UIStatus status, String locale, bool isDarkMode)?
+        $default, {
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  /// Create a copy of MainscreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MainscreenStateCopyWith<MainscreenState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -194,6 +150,8 @@ class _$MainscreenStateCopyWithImpl<$Res, $Val extends MainscreenState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MainscreenState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -237,6 +195,8 @@ class __$$InitialImplCopyWithImpl<$Res>
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MainscreenState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -284,25 +244,34 @@ class _$InitialImpl implements _Initial {
     return 'MainscreenState(status: $status, locale: $locale, isDarkMode: $isDarkMode)';
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InitialImpl &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.locale, locale) || other.locale == locale) &&
-            (identical(other.isDarkMode, isDarkMode) ||
-                other.isDarkMode == isDarkMode));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status, locale, isDarkMode);
-
-  @JsonKey(ignore: true)
+  /// Create a copy of MainscreenState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       __$$InitialImplCopyWithImpl<_$InitialImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(UIStatus status, String locale, bool isDarkMode) $default,
+  ) {
+    return $default(status, locale, isDarkMode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(UIStatus status, String locale, bool isDarkMode)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(status, locale, isDarkMode);
+    }
+    return orElse();
+  }
 }
 
 abstract class _Initial implements MainscreenState {
@@ -317,8 +286,11 @@ abstract class _Initial implements MainscreenState {
   String get locale;
   @override
   bool get isDarkMode;
+
+  /// Create a copy of MainscreenState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

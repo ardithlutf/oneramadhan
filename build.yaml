@@ -30,6 +30,6 @@ targets:
             when: true
             maybe_when: true
             when_or_null: false
-        generate_for:
-          # Example glob for only the Dart files under `lib/src/blocs`
-          - lib/features/*.dart
+#        generate_for:
+#          # Example glob for only the Dart files under `lib/src/blocs`
+#          - lib/features/*.dart

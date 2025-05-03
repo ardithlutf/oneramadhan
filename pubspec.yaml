@@ -108,6 +108,7 @@ flutter:
   assets:
     - assets/fonts/
     - assets/images/
+    - assets/images/prayer/
     - assets/icons/
   uses-material-design: true
   fonts:

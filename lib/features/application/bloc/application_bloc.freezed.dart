@@ -23,40 +23,12 @@ mixin _$ApplicationEvent {
     required TResult Function(bool enable) darkModeChanged,
   }) =>
       throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loaded,
-    TResult? Function(String locale)? localeChanged,
-    TResult? Function(bool enable)? darkModeChanged,
-  }) =>
-      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loaded,
     TResult Function(String locale)? localeChanged,
     TResult Function(bool enable)? darkModeChanged,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ApplicationLoadedEvent value) loaded,
-    required TResult Function(_LocaleChangedEvent value) localeChanged,
-    required TResult Function(_DarkModeChangedEvent value) darkModeChanged,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ApplicationLoadedEvent value)? loaded,
-    TResult? Function(_LocaleChangedEvent value)? localeChanged,
-    TResult? Function(_DarkModeChangedEvent value)? darkModeChanged,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ApplicationLoadedEvent value)? loaded,
-    TResult Function(_LocaleChangedEvent value)? localeChanged,
-    TResult Function(_DarkModeChangedEvent value)? darkModeChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -78,6 +50,9 @@ class _$ApplicationEventCopyWithImpl<$Res, $Val extends ApplicationEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of ApplicationEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -96,6 +71,9 @@ class __$$ApplicationLoadedEventImplCopyWithImpl<$Res>
       _$ApplicationLoadedEventImpl _value,
       $Res Function(_$ApplicationLoadedEventImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ApplicationEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -109,16 +87,6 @@ class _$ApplicationLoadedEventImpl implements _ApplicationLoadedEvent {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ApplicationLoadedEventImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loaded,
@@ -126,16 +94,6 @@ class _$ApplicationLoadedEventImpl implements _ApplicationLoadedEvent {
     required TResult Function(bool enable) darkModeChanged,
   }) {
     return loaded();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loaded,
-    TResult? Function(String locale)? localeChanged,
-    TResult? Function(bool enable)? darkModeChanged,
-  }) {
-    return loaded?.call();
   }
 
   @override
@@ -148,40 +106,6 @@ class _$ApplicationLoadedEventImpl implements _ApplicationLoadedEvent {
   }) {
     if (loaded != null) {
       return loaded();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ApplicationLoadedEvent value) loaded,
-    required TResult Function(_LocaleChangedEvent value) localeChanged,
-    required TResult Function(_DarkModeChangedEvent value) darkModeChanged,
-  }) {
-    return loaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ApplicationLoadedEvent value)? loaded,
-    TResult? Function(_LocaleChangedEvent value)? localeChanged,
-    TResult? Function(_DarkModeChangedEvent value)? darkModeChanged,
-  }) {
-    return loaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ApplicationLoadedEvent value)? loaded,
-    TResult Function(_LocaleChangedEvent value)? localeChanged,
-    TResult Function(_DarkModeChangedEvent value)? darkModeChanged,
-    required TResult orElse(),
-  }) {
-    if (loaded != null) {
-      return loaded(this);
     }
     return orElse();
   }
@@ -208,6 +132,8 @@ class __$$LocaleChangedEventImplCopyWithImpl<$Res>
       $Res Function(_$LocaleChangedEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApplicationEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -235,18 +161,9 @@ class _$LocaleChangedEventImpl implements _LocaleChangedEvent {
     return 'ApplicationEvent.localeChanged(locale: $locale)';
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LocaleChangedEventImpl &&
-            (identical(other.locale, locale) || other.locale == locale));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, locale);
-
-  @JsonKey(ignore: true)
+  /// Create a copy of ApplicationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LocaleChangedEventImplCopyWith<_$LocaleChangedEventImpl> get copyWith =>
@@ -265,16 +182,6 @@ class _$LocaleChangedEventImpl implements _LocaleChangedEvent {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loaded,
-    TResult? Function(String locale)? localeChanged,
-    TResult? Function(bool enable)? darkModeChanged,
-  }) {
-    return localeChanged?.call(locale);
-  }
-
-  @override
-  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loaded,
     TResult Function(String locale)? localeChanged,
@@ -286,40 +193,6 @@ class _$LocaleChangedEventImpl implements _LocaleChangedEvent {
     }
     return orElse();
   }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ApplicationLoadedEvent value) loaded,
-    required TResult Function(_LocaleChangedEvent value) localeChanged,
-    required TResult Function(_DarkModeChangedEvent value) darkModeChanged,
-  }) {
-    return localeChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ApplicationLoadedEvent value)? loaded,
-    TResult? Function(_LocaleChangedEvent value)? localeChanged,
-    TResult? Function(_DarkModeChangedEvent value)? darkModeChanged,
-  }) {
-    return localeChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ApplicationLoadedEvent value)? loaded,
-    TResult Function(_LocaleChangedEvent value)? localeChanged,
-    TResult Function(_DarkModeChangedEvent value)? darkModeChanged,
-    required TResult orElse(),
-  }) {
-    if (localeChanged != null) {
-      return localeChanged(this);
-    }
-    return orElse();
-  }
 }
 
 abstract class _LocaleChangedEvent implements ApplicationEvent {
@@ -327,7 +200,10 @@ abstract class _LocaleChangedEvent implements ApplicationEvent {
       _$LocaleChangedEventImpl;
 
   String get locale;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ApplicationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LocaleChangedEventImplCopyWith<_$LocaleChangedEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -349,6 +225,8 @@ class __$$DarkModeChangedEventImplCopyWithImpl<$Res>
       $Res Function(_$DarkModeChangedEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApplicationEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -376,18 +254,9 @@ class _$DarkModeChangedEventImpl implements _DarkModeChangedEvent {
     return 'ApplicationEvent.darkModeChanged(enable: $enable)';
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DarkModeChangedEventImpl &&
-            (identical(other.enable, enable) || other.enable == enable));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, enable);
-
-  @JsonKey(ignore: true)
+  /// Create a copy of ApplicationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DarkModeChangedEventImplCopyWith<_$DarkModeChangedEventImpl>
@@ -407,16 +276,6 @@ class _$DarkModeChangedEventImpl implements _DarkModeChangedEvent {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loaded,
-    TResult? Function(String locale)? localeChanged,
-    TResult? Function(bool enable)? darkModeChanged,
-  }) {
-    return darkModeChanged?.call(enable);
-  }
-
-  @override
-  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loaded,
     TResult Function(String locale)? localeChanged,
@@ -428,40 +287,6 @@ class _$DarkModeChangedEventImpl implements _DarkModeChangedEvent {
     }
     return orElse();
   }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ApplicationLoadedEvent value) loaded,
-    required TResult Function(_LocaleChangedEvent value) localeChanged,
-    required TResult Function(_DarkModeChangedEvent value) darkModeChanged,
-  }) {
-    return darkModeChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ApplicationLoadedEvent value)? loaded,
-    TResult? Function(_LocaleChangedEvent value)? localeChanged,
-    TResult? Function(_DarkModeChangedEvent value)? darkModeChanged,
-  }) {
-    return darkModeChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ApplicationLoadedEvent value)? loaded,
-    TResult Function(_LocaleChangedEvent value)? localeChanged,
-    TResult Function(_DarkModeChangedEvent value)? darkModeChanged,
-    required TResult orElse(),
-  }) {
-    if (darkModeChanged != null) {
-      return darkModeChanged(this);
-    }
-    return orElse();
-  }
 }
 
 abstract class _DarkModeChangedEvent implements ApplicationEvent {
@@ -469,7 +294,10 @@ abstract class _DarkModeChangedEvent implements ApplicationEvent {
       _$DarkModeChangedEventImpl;
 
   bool get enable;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ApplicationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DarkModeChangedEventImplCopyWith<_$DarkModeChangedEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -479,8 +307,23 @@ mixin _$ApplicationState {
   UIStatus get status => throw _privateConstructorUsedError;
   String get locale => throw _privateConstructorUsedError;
   bool get isDarkMode => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(UIStatus status, String locale, bool isDarkMode) $default,
+  ) =>
+      throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(UIStatus status, String locale, bool isDarkMode)?
+        $default, {
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  /// Create a copy of ApplicationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ApplicationStateCopyWith<ApplicationState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -504,6 +347,8 @@ class _$ApplicationStateCopyWithImpl<$Res, $Val extends ApplicationState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ApplicationState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -547,6 +392,8 @@ class __$$ApplicationStateImplCopyWithImpl<$Res>
       $Res Function(_$ApplicationStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApplicationState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -594,26 +441,35 @@ class _$ApplicationStateImpl implements _ApplicationState {
     return 'ApplicationState(status: $status, locale: $locale, isDarkMode: $isDarkMode)';
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ApplicationStateImpl &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.locale, locale) || other.locale == locale) &&
-            (identical(other.isDarkMode, isDarkMode) ||
-                other.isDarkMode == isDarkMode));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status, locale, isDarkMode);
-
-  @JsonKey(ignore: true)
+  /// Create a copy of ApplicationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ApplicationStateImplCopyWith<_$ApplicationStateImpl> get copyWith =>
       __$$ApplicationStateImplCopyWithImpl<_$ApplicationStateImpl>(
           this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(UIStatus status, String locale, bool isDarkMode) $default,
+  ) {
+    return $default(status, locale, isDarkMode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(UIStatus status, String locale, bool isDarkMode)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(status, locale, isDarkMode);
+    }
+    return orElse();
+  }
 }
 
 abstract class _ApplicationState implements ApplicationState {
@@ -628,8 +484,11 @@ abstract class _ApplicationState implements ApplicationState {
   String get locale;
   @override
   bool get isDarkMode;
+
+  /// Create a copy of ApplicationState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ApplicationStateImplCopyWith<_$ApplicationStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

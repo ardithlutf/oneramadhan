@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:oneramadhan/common/app_colors.dart';
+import 'package:oneramadhan/common/app_spacing.dart';
 import 'package:oneramadhan/features/login_register/bloc/auth_bloc.dart';
 import 'package:oneramadhan/features/login_register/function/auth_functions.dart';
-import 'package:oneramadhan/features/mainscreen/view/options/shalat_page.dart';
+import 'package:oneramadhan/features/profile/profile_page.dart';
+import 'package:oneramadhan/features/quran/quran_page.dart';
+import 'package:oneramadhan/features/shalat/shalat_page.dart';
+import 'package:oneramadhan/generated/assets.gen.dart';
 import 'package:oneramadhan/injector/injector.dart';
-import 'package:oneramadhan/features/mainscreen/view/options/home.dart';
 import 'package:oneramadhan/widgets/card_widget.dart';
 
 class MainScreenPage extends StatefulWidget {
@@ -36,9 +39,9 @@ class _MainScreenPageState extends State<MainScreenPage>
 
   @override
   void initState() {
+    super.initState();
     _authBloc = Injector.instance<AuthBloc>();
     _authBloc.add(const AuthEvent.started());
-    super.initState();
   }
 
   @override
@@ -64,16 +67,19 @@ class _MainScreenPageState extends State<MainScreenPage>
             }
           },
           child: Scaffold(
-              appBar: AppBar(
-                title: const Text('One Ramadhan'),
-                actions: [
-                  IconButton(
-                      onPressed: () {
-                        _authBloc.add(const AuthEvent.authSingOut());
-                      },
-                      icon: const Icon(Icons.logout))
-                ],
-              ),
+              appBar: _selectedIndex == 0
+                  ? AppBar(
+                      title: SizedBox(
+                          height: 32, child: Assets.images.logo.image()),
+                      actions: [
+                        IconButton(
+                            onPressed: () {
+                              _authBloc.add(const AuthEvent.authSingOut());
+                            },
+                            icon: const Icon(Icons.logout))
+                      ],
+                    )
+                  : null,
               body: _widgetOptions.elementAt(_selectedIndex),
               bottomNavigationBar: BottomNavBar(
                   selectedIndex: _selectedIndex, onItemTapped: _onItemTapped))),
@@ -89,6 +95,7 @@ class HomeScreen extends StatelessWidget {
     return const Column(
       children: [
         PrayerTimeCard(),
+        CardLoginAccount(),
         GridMenu(),
         Spacer(),
       ],
@@ -110,10 +117,22 @@ class GridMenu extends StatelessWidget {
       crossAxisCount: 2,
       childAspectRatio: 1.7,
       children: const [
-        MenuTile(icon: Icons.calendar_today, title: 'Jadwal Sholat'),
-        MenuTile(icon: Icons.book, title: 'Al-Qur\'an'),
-        MenuTile(icon: Icons.star, title: 'Ma\'tsurat'),
-        MenuTile(icon: Icons.emoji_emotions, title: 'My Feeling'),
+        MenuTile(
+            icon: Icons.calendar_today,
+            title: 'Jadwal Sholat',
+            backgroundColor: Color.fromRGBO(196, 223, 170, 1)),
+        MenuTile(
+            icon: Icons.book,
+            title: 'Al-Qur\'an',
+            backgroundColor: Color.fromRGBO(200, 255, 212, 1)),
+        MenuTile(
+            icon: Icons.star,
+            title: 'Ma\'tsurat',
+            backgroundColor: Color.fromRGBO(184, 232, 252, 1)),
+        MenuTile(
+            icon: Icons.emoji_emotions,
+            title: 'My Feeling',
+            backgroundColor: Color.fromRGBO(253, 253, 189, 1)),
       ],
     );
   }
@@ -122,22 +141,39 @@ class GridMenu extends StatelessWidget {
 class MenuTile extends StatelessWidget {
   final IconData icon;
   final String title;
+  final Color backgroundColor;
 
-  const MenuTile({Key? key, required this.icon, required this.title})
-      : super(key: key);
+  const MenuTile(
+      {super.key,
+      required this.icon,
+      required this.title,
+      required this.backgroundColor});
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Color.fromRGBO(255, 255, 255, 1),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon),
-            const SizedBox(height: 8),
-            Text(title),
+            CircleAvatar(
+              radius: 18,
+              backgroundColor: backgroundColor,
+              child: IconButton(
+                icon: Icon(
+                  icon,
+                  size: 18,
+                  color: Colors.black,
+                ),
+                onPressed: () {},
+              ),
+            ),
+            AppSpacing.verticalSpacing8,
+            Text(title,
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
           ],
         ),
       ),
