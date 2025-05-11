@@ -38,8 +38,7 @@ class PrayerTimesScreen extends StatelessWidget {
               child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 18, vertical: 64),
-                  child: PrayerTextAndCountdown(
-                      color: Color.fromRGBO(22, 51, 117, 1))),
+                  child: PrayerTextAndCountdown()),
             ),
             const DateSelector(),
             const LocationCard(),

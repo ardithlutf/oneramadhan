@@ -29,8 +29,7 @@ class SimpleGlobalSnackBar {
             left: 10,
             right: 10),
         behavior: SnackBarBehavior.floating,
-        content: Text(message),
-        // duration: const Duration(seconds: 5000000),
+        content: Text(message, maxLines: 3),
         // shape: const RoundedRectangleBorder(
         //   borderRadius: BorderRadius.only(
         //       topLeft: Radius.circular(16.0), topRight: Radius.circular(16.0)),

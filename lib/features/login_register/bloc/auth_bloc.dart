@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:oneramadhan/common/app_durations.dart';
 import 'package:oneramadhan/common/app_enums.dart';
 import 'package:oneramadhan/services/local_storage_service/local_storage_service.dart';
 
@@ -23,9 +24,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_CreateAccountEvent>(_onCreateAccount);
     on<_GuestEvent>(_onLoginGuest);
     on<_GoogleEvent>(_onLoginGoogle);
+    on<_AuthSingOutEvent>(_onLogout);
     // TODO:
     on<_EmailPasswordEvent>(_onLoginEmailPassword);
-    on<_AuthSingOutEvent>(_onLogout);
   }
 
   FutureOr<void> _onStarted(_StartedEvent event, Emitter<AuthState> emit) {
@@ -59,11 +60,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         ));
       } else {
         try {
-          await Future.delayed(const Duration(seconds: 1));
+          await AppDurations.baseDelay;
 
           await signOutFromGoogle();
 
           _localStorageService.setIsLoggedIn(true);
+          _localStorageService.setIsGuestMode(false);
 
           emit(state.copyWith(status: UIStatus.newUser));
         } catch (e) {
@@ -83,13 +85,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     ));
 
     try {
-      await Future.delayed(const Duration(seconds: 3));
+      await AppDurations.delay1Sec;
 
       await loginAnonymously();
       _localStorageService.setIsLoggedIn(true);
+      _localStorageService.setIsGuestMode(true);
 
       emit(state.copyWith(
-          status: UIStatus.authSuccess, loginAs: UserEnum.guest));
+          status: UIStatus.authSuccess,
+          loginAs: UserEnum.guest,
+          displayName: 'guest'));
     } catch (e) {
       emit(state.copyWith(
         status: UIStatus.authFailed,
@@ -105,18 +110,19 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     ));
 
     try {
-      await Future.delayed(const Duration(seconds: 3));
+      await AppDurations.delay3Secs;
 
       final authGoogle = await loginWithGoogle();
 
       _localStorageService.setIsLoggedIn(true);
+      _localStorageService.setIsGuestMode(false);
 
-      final String _displayName = authGoogle!.user!.displayName ?? '';
+      final String name = authGoogle!.user!.displayName ?? '';
 
       emit(state.copyWith(
           status: UIStatus.authSuccess,
           loginAs: UserEnum.userGoogle,
-          displayName: _displayName));
+          displayName: name));
     } catch (e) {
       emit(state.copyWith(
         status: UIStatus.authFailed,
@@ -137,13 +143,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         error: 'Username or password can\'t be empty',
       ));
     } else {
-      await Future.delayed(const Duration(seconds: 1));
+      await AppDurations.delay1Sec;
 
       if (event.username == 'admin' && event.password == 'one1') {
         _localStorageService.setIsLoggedIn(true);
+        _localStorageService.setIsGuestMode(false);
 
-        emit(state.copyWith(status: UIStatus.authSuccess));
+        emit(state.copyWith(
+            status: UIStatus.authSuccess,
+            loginAs: UserEnum.admin,
+            displayName: 'admin'));
       } else {
+        // TODO:
         emit(state.copyWith(
           status: UIStatus.authFailed,
           error: 'Account not found',
@@ -159,11 +170,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     ));
 
     try {
-      await Future.delayed(const Duration(seconds: 1));
+      if (!_localStorageService.isGuestMode) {
+        await signOutFromGoogle();
+      }
 
-      await signOutFromGoogle();
-
-      _localStorageService.setIsLoggedIn(false);
+      _localStorageService.remove(_localStorageService.isLoggedInKey);
+      _localStorageService.remove(_localStorageService.isGuestModeKey);
 
       emit(state.copyWith(status: UIStatus.authSuccess));
     } catch (e) {

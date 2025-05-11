@@ -47,7 +47,17 @@ class ServiceModule {
 
       // Register LocalStorage with proper initialization
       injector.registerSingletonAsync<LocalStorageService>(() async {
-        final service = SharedPreferencesService();
+        // Get LogService if already available
+        LogService? logService;
+        try {
+          if (injector.isRegistered<LogService>()) {
+            logService = injector.get<LogService>();
+          }
+        } catch (_) {
+          // LogService might not be available yet, which is fine
+        }
+
+        final service = SharedPreferencesService(logService: logService);
         await service.initialize();
         return service;
       });

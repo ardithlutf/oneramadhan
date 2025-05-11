@@ -49,10 +49,10 @@ class Injector {
       }
 
       // Repositories depend on services and database
-      await RepositoryModule.init();
+      RepositoryModule.init();
 
       // BLoCs should be initialized last as they depend on repositories
-      await BlocModule.init();
+      BlocModule.init();
 
       debugPrint('✅ Dependency injection initialized successfully');
     } catch (e) {
@@ -80,7 +80,8 @@ class Injector {
 
   /// Checks if a specific dependency is registered
   static bool isRegistered<T extends Object>({Object? instance}) {
-    return Injector.instance.isRegistered<T>(instanceName: instance?.toString());
+    return Injector.instance
+        .isRegistered<T>(instanceName: instance?.toString());
   }
 
   /// Utility method to get a registered dependency

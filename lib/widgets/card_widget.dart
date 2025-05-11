@@ -21,34 +21,30 @@ class PrayerTimeCard extends StatelessWidget {
           // ),
         ),
       ),
-      child: PrayerTextAndCountdown(color: Colors.white),
+      child: PrayerTextAndCountdown(),
     );
   }
 }
 
 class PrayerTextAndCountdown extends StatelessWidget {
-  final Color color;
-
-  const PrayerTextAndCountdown({super.key, required this.color});
+  const PrayerTextAndCountdown({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Zuhur', style: TextStyle(color: color, fontSize: 16)),
+        Text('Zuhur', style: TextStyle(fontSize: 16)),
         SizedBox(height: 4),
         Text(
           '11:59',
           style: TextStyle(
-            color: color,
             fontSize: 36,
             fontWeight: FontWeight.bold,
           ),
         ),
         SizedBox(height: 4),
-        Text('2 jam 38 menit lagi',
-            style: TextStyle(color: color, fontSize: 14)),
+        Text('2 jam 38 menit lagi', style: TextStyle(fontSize: 14)),
       ],
     );
   }
@@ -73,18 +69,20 @@ class CardLoginAccount extends StatelessWidget {
                 children: [
                   Text(
                     'Halo, Pejuang Ramadhan!',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.grey.shade600,
-                    ),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall!
+                        .copyWith(fontWeight: FontWeight.w600),
                   ),
                   Text(
                     'Akses semua fitur, yuk~',
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.grey.shade500,
-                    ),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall!
+                        .copyWith(
+                          fontSize: 12,
+                        )
+                        .apply(color: Colors.grey.shade500),
                   ),
                 ],
               ),

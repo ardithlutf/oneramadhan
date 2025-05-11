@@ -26,7 +26,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late final ApplicationBloc _bloc;
+  final ApplicationBloc _bloc = Injector.instance<ApplicationBloc>();
   late String _locale;
   late bool _isDarkMode;
   late final AppLocalizationDelegate appLocalizationDelegate;
@@ -47,7 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     _locale = AppConfig.defaultLocale;
-    _bloc = Injector.instance<ApplicationBloc>();
     _bloc.add(const ApplicationEvent.loaded());
     _isDarkMode = false;
     appLocalizationDelegate = const AppLocalizationDelegate();

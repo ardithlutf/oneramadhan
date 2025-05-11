@@ -13,7 +13,7 @@ class AppThemes {
   static const Color _darkBackgroundColor = Color(0xFF1a222d);
 
   //Text
-  static const Color _lightTextColor = Color(0xff000000);
+  static const Color _lightTextColor = Color.fromRGBO(22, 51, 117, 1);
   static const Color _darkTextColor = Color(0xffffffff);
 
   //Icon
@@ -224,6 +224,9 @@ class AppThemes {
     dividerTheme: const DividerThemeData(
       color: Colors.grey,
     ),
+    listTileTheme: ListTileThemeData(
+      textColor: _lightTextColor,
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(48, 48),
@@ -302,6 +305,9 @@ class AppThemes {
     textTheme: darkTextTheme,
     dividerTheme: const DividerThemeData(
       color: Colors.grey,
+    ),
+    listTileTheme: ListTileThemeData(
+      textColor: _darkTextColor,
     ),
   );
 }

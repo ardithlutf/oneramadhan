@@ -9,10 +9,10 @@ import 'injector.dart';
 class BlocModule {
   BlocModule._();
 
-  static Future<void> init() async {
+  static void init() {
     final injector = Injector.instance;
 
-    injector.registerSingleton<ApplicationBloc>(
+    injector.registerFactory<ApplicationBloc>(() =>
         ApplicationBloc(localStorageService: injector(), repo: injector()));
 
     injector.registerFactory<AuthBloc>(

@@ -46,7 +46,8 @@ class DebugLogService implements LogService {
   /// Logs an error message with red coloring and optional error details.
   @override
   void error(String message, [dynamic error, StackTrace? stackTrace]) {
-    final errorStackTrace = stackTrace ?? (error != null ? StackTrace.current : null);
+    final errorStackTrace =
+        stackTrace ?? (error != null ? StackTrace.current : null);
 
     _log('$_redColor[ERROR]$_resetColor $message');
 
@@ -55,7 +56,8 @@ class DebugLogService implements LogService {
     }
 
     if (errorStackTrace != null) {
-      _log('$_redColor[STACK TRACE]$_resetColor\n${errorStackTrace.toString()}');
+      _log(
+          '$_redColor[STACK TRACE]$_resetColor\n${errorStackTrace.toString()}');
     }
 
     // Forward to error handler if available

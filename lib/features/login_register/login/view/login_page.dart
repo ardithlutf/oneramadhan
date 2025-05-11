@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:oneramadhan/common/app_dimens.dart';
-import 'package:oneramadhan/common/app_enums.dart';
-import 'package:oneramadhan/common/app_snackbar.dart';
 import 'package:oneramadhan/common/app_spacing.dart';
 import 'package:oneramadhan/features/login_register/bloc/auth_bloc.dart';
 import 'package:oneramadhan/features/login_register/function/auth_functions.dart';
@@ -23,7 +21,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> with AuthFunctionMixin {
-  late final AuthBloc _authBloc;
+  final AuthBloc _authBloc = Injector.instance<AuthBloc>();
 
   bool _isLoadingAuthCr = false, _isLoadingAuthGoogle = false;
 
@@ -32,7 +30,6 @@ class _LoginPageState extends State<LoginPage> with AuthFunctionMixin {
 
   @override
   void initState() {
-    _authBloc = Injector.instance<AuthBloc>();
     _authBloc.add(const AuthEvent.started());
     super.initState();
   }

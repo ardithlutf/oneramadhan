@@ -21,13 +21,12 @@ class OnBoardingPage extends StatefulWidget {
 
 class _OnBoardingPageState extends State<OnBoardingPage>
     with AuthFunctionMixin {
-  late final AuthBloc _authBloc;
+   final AuthBloc _authBloc = Injector.instance<AuthBloc>();
 
   bool _isLoading = false;
 
   @override
   void initState() {
-    _authBloc = Injector.instance<AuthBloc>();
     _authBloc.add(const AuthEvent.started());
     super.initState();
   }

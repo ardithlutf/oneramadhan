@@ -9,6 +9,7 @@ import 'package:oneramadhan/features/quran/quran_page.dart';
 import 'package:oneramadhan/features/shalat/shalat_page.dart';
 import 'package:oneramadhan/generated/assets.gen.dart';
 import 'package:oneramadhan/injector/injector.dart';
+import 'package:oneramadhan/services/local_storage_service/local_storage_service.dart';
 import 'package:oneramadhan/widgets/card_widget.dart';
 
 class MainScreenPage extends StatefulWidget {
@@ -20,7 +21,7 @@ class MainScreenPage extends StatefulWidget {
 
 class _MainScreenPageState extends State<MainScreenPage>
     with AuthFunctionMixin {
-  late final AuthBloc _authBloc;
+  final AuthBloc _authBloc = Injector.instance<AuthBloc>();
 
   int _selectedIndex = 0;
 
@@ -40,7 +41,6 @@ class _MainScreenPageState extends State<MainScreenPage>
   @override
   void initState() {
     super.initState();
-    _authBloc = Injector.instance<AuthBloc>();
     _authBloc.add(const AuthEvent.started());
   }
 
@@ -92,10 +92,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    final bool isGuestMode =
+        Injector.instance<LocalStorageService>().isGuestMode;
+
+    return Column(
       children: [
         PrayerTimeCard(),
-        CardLoginAccount(),
+        isGuestMode ? CardLoginAccount() : SizedBox.shrink(),
         GridMenu(),
         Spacer(),
       ],
@@ -115,7 +118,7 @@ class GridMenu extends StatelessWidget {
       mainAxisSpacing: 12,
       crossAxisSpacing: 12,
       crossAxisCount: 2,
-      childAspectRatio: 1.7,
+      childAspectRatio: 1.5,
       children: const [
         MenuTile(
             icon: Icons.calendar_today,
@@ -182,10 +185,10 @@ class MenuTile extends StatelessWidget {
 }
 
 class BottomNavBar extends StatelessWidget {
-  int selectedIndex;
-  void Function(int index) onItemTapped;
+  final int selectedIndex;
+  final void Function(int index) onItemTapped;
 
-  BottomNavBar(
+  const BottomNavBar(
       {super.key, required this.selectedIndex, required this.onItemTapped});
 
   @override
