@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:oneramadhan/common/app_colors.dart';
 import 'package:oneramadhan/common/app_spacing.dart';
+import 'package:oneramadhan/features/application/home_page_test.dart';
 import 'package:oneramadhan/features/login_register/bloc/auth_bloc.dart';
 import 'package:oneramadhan/features/login_register/function/auth_functions.dart';
 import 'package:oneramadhan/features/profile/profile_page.dart';
@@ -9,6 +11,7 @@ import 'package:oneramadhan/features/quran/quran_page.dart';
 import 'package:oneramadhan/features/shalat/shalat_page.dart';
 import 'package:oneramadhan/generated/assets.gen.dart';
 import 'package:oneramadhan/injector/injector.dart';
+import 'package:oneramadhan/router/app_router.dart';
 import 'package:oneramadhan/services/local_storage_service/local_storage_service.dart';
 import 'package:oneramadhan/widgets/card_widget.dart';
 
@@ -71,13 +74,6 @@ class _MainScreenPageState extends State<MainScreenPage>
                   ? AppBar(
                       title: SizedBox(
                           height: 32, child: Assets.images.logo.image()),
-                      actions: [
-                        IconButton(
-                            onPressed: () {
-                              _authBloc.add(const AuthEvent.authSingOut());
-                            },
-                            icon: const Icon(Icons.logout))
-                      ],
                     )
                   : null,
               body: _widgetOptions.elementAt(_selectedIndex),
@@ -154,30 +150,44 @@ class MenuTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Color.fromRGBO(255, 255, 255, 1),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircleAvatar(
-              radius: 18,
-              backgroundColor: backgroundColor,
-              child: IconButton(
-                icon: Icon(
-                  icon,
-                  size: 18,
-                  color: Colors.black,
+    return GestureDetector(
+      onTap: () {
+        switch (title) {
+          case 'Jadwal Sholat':
+          // TODO:
+          case 'Al-Qur\'an':
+          // TODO:
+          case 'Ma\'tsurat':
+          // TODO:
+          case 'My Feeling':
+            context.pushNamed(AppRouter.feeling);
+        }
+      },
+      child: Card(
+        color: Color.fromRGBO(255, 255, 255, 1),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                radius: 18,
+                backgroundColor: backgroundColor,
+                child: IconButton(
+                  icon: Icon(
+                    icon,
+                    size: 18,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {},
                 ),
-                onPressed: () {},
               ),
-            ),
-            AppSpacing.verticalSpacing8,
-            Text(title,
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
-          ],
+              AppSpacing.verticalSpacing8,
+              Text(title,
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
+            ],
+          ),
         ),
       ),
     );
